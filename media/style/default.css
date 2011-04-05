@@ -1,15 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
-
+#IE{display:none}
 body{font:14px/1.5 "Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti; color:#484848; text-shadow:0 1px 1px white}
 a{color:#36c;text-decoration:none;}
-a:hover{ text-decoration:none; background-color:#36c; color:#fff;-webkit-transition:all .2s ease-in;-ms-transition:all .2s ease-in;-moz-transition:all .2s ease-in;text-shadow:0 1px 1px 36c}
+section a:hover{ text-decoration:none; background-color:#36c; color:#fff;-webkit-transition:all .2s ease-in;-ms-transition:all .2s ease-in;-moz-transition:all .2s ease-in;text-shadow:0 1px 1px 36c}
 html, body{height:100%; overflow:hidden}
 /*side*/
 #side{ width:230px; background:#e4e4e4; float:left; height:100%;}
-#side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;}
-#side nav{ text-align:right; margin-top:60px;}
-#side nav li{margin-bottom:15px;padding-right:5px;}
+#side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;margin-bottom:75px;}
+#side nav li{margin-bottom:15px;padding-right:5px;text-align:right;}
 #side nav li.current a{color:#333;}
 #side nav li.current a:hover{ background:none;}
 /*footer*/
@@ -21,3 +20,13 @@ footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:
 #main nav.article a.selected{color:#333;background:none;}
 #main nav.article a span{font-size:10px;padding:0 3px;}
 #main nav.article a:hover{border-radius:3px;}
+
+@media handheld, only screen and (max-width: 800px){
+#main{ margin:10px auto;}
+#side{ float:none;width:100%}
+#side header{ display:none}
+#side nav li{ display:inline-block; text-align:left}
+html, body{height:auto; overflow:auto}
+footer{display:none}
+a.github{display:none!important}
+}

@@ -5,11 +5,23 @@
 <title>网 · 事-@星光</title>
 <link rel="stylesheet" href="media/style/common.css" />
 <link rel="stylesheet" href="media/style/default.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+<![endif]--> 
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
 </head>
-<body>
+<!--[if lt IE 7 ]> <body class="ie6"> <![endif]--> 
+<!--[if IE 7 ]>    <body class="ie7"> <![endif]--> 
+<!--[if IE 8 ]>    <body class="ie8"> <![endif]--> 
+<!--[if IE 9 ]>    <body class="ie9"> <![endif]--> 
+<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]--> 
+<div id="IE">太OUT了，还在用IE;</div>
 <section id="side">
-  <header>
-  	<!--<figure class="logo">
+  <header> 
+    <!--<figure class="logo">
     	<figcaption>网 · 事</figcaption>
         <p>
         <pre>
@@ -19,7 +31,7 @@
         }
         </pre>
         </p>	
-    </figure>-->
+    </figure>--> 
   </header>
   <nav>
     <ul>
@@ -29,15 +41,27 @@
   </nav>
 </section>
 <section id="main">
-  <nav class="article">
-  <a  href="#" class="selected">读<span>●</span>写...</a>
-  <a  href="#">听<span>●</span>说...</a>
-  <a  href="#">书<span>●</span>籍...</a>
-  <a  href="#">影<span>●</span>音...</a>
-  </nav>
-  <article> 
+  <nav class="article"> <a  href="#" class="selected">读<span>●</span>写...</a> <a  href="#">听<span>●</span>说...</a> <a  href="#">书<span>●</span>籍...</a> <a  href="#">影<span>●</span>音...</a> </nav>
+  <article>
+  	<ul id="cnblog">
+    
+    </ul>
   </article>
 </section>
 <footer></footer>
+<a href="http://github.com/jguang" class="github" style="display:block; position: absolute; top: 0; right: 0; width: 150px; height: 150px; z-index: 10000;border: none;">
+    <img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+<script>
+var yqlUrl1= "http://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%20from%20rss%20where%20url%3D'http%3A%2F%2Fwww.cnblogs.com%2Fxingguang%2Frss'&format=json&diagnostics=true&callback=?";
+$.getJSON(yqlUrl1, function(data){
+  $.each(data.query.results.item, function(index, item){
+    $("<a href='"+ item.link + "' target='_blank' />")
+    .html(item.title)
+    .appendTo($('#cnblog'))
+    .wrap('<li/>');
+  });
+});
+</script>
 </body>
 </html>
