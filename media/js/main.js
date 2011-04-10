@@ -31,6 +31,19 @@ function loadArticle(path){
 		}
 	});
 };
+function loadHash(){
+	var url=getHash().toLowerCase(),pathUrl,fileUrl;
+		if(url.lastIndexOf("/")==-1){
+			pathUrl="/";
+			fileUrl=url;	
+		}
+		else{
+		pathUrl=url.slice(0,url.lastIndexOf("/")+1),
+		fileUrl=url.slice(url.lastIndexOf("/")+1);
+		if(fileUrl.lastIndexOf(".")==-1){pathUrl=url+"/";fileUrl="catalog.txt"}
+		}
+	loadArticle(pathUrl+fileUrl);
+};
 var keys = {
     enter:  13,
     escape: 27,
@@ -43,17 +56,11 @@ jQuery(function($){
 		$(this).text("loading");	
 	});
 	window.onhashchange=function(){
-		var url=getHash().toLowerCase(),pathUrl,fileUrl;
-		if(url.lastIndexOf("/")==-1){
-			pathUrl="/";
-			fileUrl=url;	
-		}
-		else{
-		pathUrl=url.slice(0,url.lastIndexOf("/")+1),
-		fileUrl=url.slice(url.lastIndexOf("/")+1);
-		if(fileUrl.lastIndexOf(".")==-1){pathUrl=url+"/";fileUrl="catalog.txt"}
-		}
-		loadArticle(pathUrl+fileUrl);
+		loadHash();
 	};
-	location.hash=$("#mainNav a.selected").attr("href");
+	if(location.hash=="")
+	{location.hash=$("#mainNav a.selected").attr("href");}
+	else
+	{loadHash();}
+	
 });
