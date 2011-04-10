@@ -61,5 +61,4 @@ jQuery(function($){
 	{location.hash=$("#mainNav a.selected").attr("href");}
 	else
 	{loadHash();}
-	
 });
