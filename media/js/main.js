@@ -18,7 +18,6 @@ function formatText(text) {
 };
 function loadArticle(path){
 	$.ajax({
-		type:"POST",
 		url:path,
 		dataType:"text",
 		cache: false,
