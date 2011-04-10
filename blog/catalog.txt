@@ -1,0 +1,8 @@
+
+	  
+  - [HTML5中的表单验证]
+  - [HTML5中新增的history API]
+
+  [HTML5中的表单验证]: #blog/string.txt
+  [HTML5中新增的history API]: #blog/string.txt
+

@@ -4,7 +4,7 @@
 body{font:14px/1.5 "Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti; color:#484848; text-shadow:0 1px 1px white}
 a{color:#36c;text-decoration:none;}
 section a:hover{ text-decoration:none; background-color:#36c; color:#fff;-webkit-transition:all .2s ease-in;-ms-transition:all .2s ease-in;-moz-transition:all .2s ease-in;text-shadow:0 1px 1px 36c}
-html, body{height:100%; overflow:hidden}
+html, body{height:100%;}
 /*side*/
 #side{ width:230px; background:#e4e4e4; float:left; height:100%;}
 #side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;margin-bottom:75px;}
@@ -12,9 +12,9 @@ html, body{height:100%; overflow:hidden}
 #side nav li.current a{color:#333;}
 #side nav li.current a:hover{ background:none;}
 /*footer*/
-footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%;}
+footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%; display:none}
 /*main*/
-#main{ margin-left:240px;}
+#main{ margin-left:240px;height:100%;overflow:auto}
 #main nav.article{padding:3px 10px;border-radius:3px; background:#ccc; margin:15px 10px 15px 0;}
 #main nav.article a{ font-size:16px; display:inline-block; margin-right:30px;padding:0 3px;}
 #main nav.article a.selected{color:#333;background:none;}

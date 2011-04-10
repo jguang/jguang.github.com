@@ -5,12 +5,12 @@
 <title>网 · 事-@星光</title>
 <link rel="stylesheet" href="media/style/common.css" />
 <link rel="stylesheet" href="media/style/default.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="http://yandex.st/highlightjs/5.16/highlight.min.js"></script>
 <link rel="stylesheet" href="media/style/hightlight-sunburst.css" />
-<!--[if lte IE 9]>
-<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
-<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="media/js/highlight.js"></script>
+<script src="media/js/showdown.js"></script>
+<script src="media/js/main.js"></script>
+
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -47,10 +47,9 @@
   </nav>
 </section>
 <section id="main">
-  <nav class="article"> <a  href="#" class="selected">读<span>●</span>写...</a> <a  href="#">听<span>●</span>说...</a> <a  href="#">书<span>●</span>籍...</a> <a  href="#">影<span>●</span>音...</a> </nav>
-  <article>
-    <ul id="cnblog">
-    </ul>
+  <nav class="article" id="mainNav"> <a  href="#blog/" class="selected">读<span>●</span>写...</a> <a  href="#twitter/">听<span>●</span>说...</a> <a  href="#book/">书<span>●</span>籍...</a> <a  href="#play/">影<span>●</span>音...</a> </nav>
+  <article id="content">
+    
   </article>
 </section>
 <footer></footer>
@@ -66,6 +65,5 @@ $.getJSON(yqlUrl1, function(data){
   });
 });
 </script>--> 
-<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
