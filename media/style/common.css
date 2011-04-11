@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote { margin: 0; padding: 0 }
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, p { margin: 0; padding: 0 }
 table { border-collapse: collapse; border-spacing: 0 }
 section, article, aside, header, footer, nav, figure{display:block;}
 fieldset, img {border: 0}

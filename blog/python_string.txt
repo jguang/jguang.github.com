@@ -1,0 +1,20 @@
+python字符串操作笔记
+=================
+
+字符串截取
+----------------
+
+  - str[::-1]创造一个与原字符串顺序相反的字符串
+  - str[:-3] 截取从头开始到倒数第三个字符之前
+  - str.strip()去除收尾空格
+  - str.strip("yes") 去除首尾的y, e, s字符	
+  
+**实例:**	
+<pre>
+<code class="python">s="salkdjflksjdaf\n\r\t"
+s.strip();
+salkdjflksjdaf
+s.strip('saf');
+lkdjflksjd</code></pre>
+
+	
