@@ -1,6 +1,0 @@
-  - [python字符串操作笔记]
-  - [HTML5中的   表单验证]
-
-
-  [python字符串操作笔记]: #blog/python_string.txt
-  [HTML5中的   表单验证]: #blog/string.txt
