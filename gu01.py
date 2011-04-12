@@ -13,7 +13,7 @@ for f in os.listdir(rootdir):
       blog = codecs.open(fpath,"r","utf-8")
       str1 = blog.readline()
       string+=("  - ["+str1.strip()+"]\n");
-      link+="  ["+str1[:-2]+"]: #blog/"+f+"\n"
+      link+="  ["+str1.strip()+"]: #blog/"+f+"\n"
       blog.close()
       
 catafile.write(string+"\n\n"+link)

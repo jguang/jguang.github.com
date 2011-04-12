@@ -12,7 +12,7 @@ html, body{height:100%;}
 #side nav li.current a{color:#333;}
 #side nav li.current a:hover{ background:none;}
 /*footer*/
-footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%;}
+footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%; display:none}
 /*main*/
 #main{ margin-left:240px;height:100%;overflow:auto}
 #main nav.article{padding:3px 10px;border-radius:3px; background:#ccc; margin:15px 10px 15px 0;}
