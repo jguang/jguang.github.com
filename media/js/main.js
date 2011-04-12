@@ -7,6 +7,10 @@ function loadArticle(path){
 		url:path,
 		dataType:"text",
 		cache: false,
+		statusCode: {
+			404:function(){alert("页面没有发现");}	 
+		},
+		error:function(){},
 		success:function(data){
 			selected_languages = LANGUAGES;
 			$("#content").html(formatText(data));
@@ -24,14 +28,13 @@ var keys = {
     array:  [13, 27, 38, 40]
 };
 function require(){
-	this.URL={};
-	require.init();	
+	this.URL={};	
 };
 require.prototype.getHash=function(){
 	return location.hash.substring(1);
 };
 require.prototype.hashObj=function(){
-	var hashString=location.hash.substring(1),
+	var hashString=this.getHash(),
 	hashAry=hashString.split("&"),
 	hashObj={},
 	ar;
@@ -42,8 +45,9 @@ require.prototype.hashObj=function(){
 	return hashObj;
 };
 require.prototype.init=function(){
-	var url=this.getHash,
-	urlary=url.split("/"),len=urlary.length;
+	var url=this.getHash(),
+	urlary=url.split("/"),
+	len=urlary.length;
 	/*设置默认连接为catalog.txt*/
 	if(len==1&&urlary[0].lastIndexOf('.')!=-1){
 		urlary.unshift('');
@@ -57,12 +61,14 @@ require.prototype.init=function(){
 	this.URL.dir=urlary[0];
 	this.URL.path=urlary.join("/");
 	this.URL.file=urlary[urlary.length];
+	this.loadURL();
 };
 require.prototype.loadURL=function(){
 	var dir=this.URL.dir;
 	switch(dir){
 	case 'blog':
-		break;
+	 loadArticle(this.URL.path);
+	 break;
 	case 'twitter':
 		break;
 	case 'book':
@@ -74,15 +80,16 @@ require.prototype.loadURL=function(){
 	}
 	
 };
+requ=new require();
 jQuery(function($){
 	$("#loading").ajaxStart(function(){
 		$(this).text("loading");	
 	});
 	window.onhashchange=function(){
-		loadHash();
+		requ.init();
 	};
 	if(location.hash=="")
 	{location.hash=$("#mainNav a.selected").attr("href");}
 	else
-	{require()}
+	{requ.init();}
 });

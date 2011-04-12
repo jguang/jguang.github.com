@@ -1,6 +1,8 @@
 python字符串操作笔记
 =================
 
+在python有各种各样的string操作函数。在历史上string类在python中经历了一段轮回的历史。在最开始的时候，python有一个专门 的string的module，要使用string的方法要先import，但后来由于众多的python使用者的建议，从python2.0开始，string方法改为用S.method()的形式调用，只要S是一个字符串对象就可以这样使用，而不用import。同时为了保持向后兼容，现在的 python中仍然保留了一个string的module，其中定义的方法与S.method()是相同的，这些方法都最后都指向了用S.method ()调用的函数。要注意，S.method()能调用的方法比string的module中的多，比如isdigit()、istitle()等就只能用 S.method()的方式调用。
+
 字符串截取
 ----------------
 
@@ -11,10 +13,19 @@ python字符串操作笔记
   
 **实例:**	
 <pre>
-<code class="python">s="salkdjflksjdaf\n\r\t"
-s.strip();
-salkdjflksjdaf
-s.strip('saf');
-lkdjflksjd</code></pre>
+<code class="python">>>s="salkdjflksjdaf\n\r\t"
+>>s.strip();
+>>salkdjflksjdaf
+>>s.strip('saf');
+>>lkdjflksjd</code></pre>
 
+字符串变换
+--------------
+
+  - len(S) #字符串长度
+  - S.lower() #小写 
+  - S.upper() #大写 
+  - S.swapcase() #大小写互换 
+  - S.capitalize() #首字母大写 
+  - S.title() #只有首字母大写，其余为小写，模块中没有这个方法
 	
