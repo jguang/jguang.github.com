@@ -4,7 +4,7 @@
 body{font:14px/1.5 "Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti; color:#484848; text-shadow:0 1px 1px white}
 a{color:#36c;text-decoration:none;}
 section a:hover{ text-decoration:none; background-color:#36c; color:#fff;-webkit-transition:all .2s ease-in;-ms-transition:all .2s ease-in;-moz-transition:all .2s ease-in;text-shadow:0 1px 1px 36c;border-radius:3px;padding-left:2px; padding-right:2px;}
-html, body{height:100%;}
+html, body{height:100%; width:100%; overflow:hidden}
 /*side*/
 #side{ width:230px; background:#e4e4e4;height:100%; position:absolute; top:0; bottom:0}
 #side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;margin-bottom:75px;}
