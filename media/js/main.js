@@ -80,7 +80,7 @@ require.prototype.loadURL=function(){
 	default:
 		
 	}
-	$(act_block).addClass("slide out").delay(2000).removeClass("slide out active_block");
+	$(act_block).addClass("slide out");
 	$(new_block).addClass("active_block");
 };
 requ=new require();
