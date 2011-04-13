@@ -81,7 +81,9 @@ require.prototype.loadURL=function(){
 		
 	}
 	$(act_block).addClass("slide out");
-	$(new_block).addClass("active_block");
+	setTimeout(function(){$(act_block).removeClass("slide out active_block")},400)
+	$(new_block).addClass("active_block slide in");
+	setTimeout(function(){$(new_block).removeClass("slide in")},400)
 };
 requ=new require();
 jQuery(function($){
