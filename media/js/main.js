@@ -80,10 +80,12 @@ require.prototype.loadURL=function(){
 	default:
 		
 	}
+	if(act_block!=new_block){
 	$(act_block).addClass("slide out");
 	setTimeout(function(){$(act_block).removeClass("slide out active_block")},400)
 	$(new_block).addClass("active_block slide in");
-	setTimeout(function(){$(new_block).removeClass("slide in")},400)
+	setTimeout(function(){$(new_block).removeClass("slide in")},400)}
+	else $(new_block).addClass("active_block");
 };
 requ=new require();
 jQuery(function($){
