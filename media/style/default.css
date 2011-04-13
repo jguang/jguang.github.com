@@ -21,7 +21,7 @@ footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:
 #main nav.article a span{font-size:10px;padding:0 3px;}
 #main nav.article a:hover{border-radius:3px;}
 
-#content{position:relative;}
+#content{position:relative;overflow-x:hidden; height:100%}
 	.cont_block{display:none; position:absolute;width:100%;}
 	.active_block{display:block;}
 	
