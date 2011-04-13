@@ -8,7 +8,7 @@ html, body{height:100%;}
 /*side*/
 #side{ width:230px; background:#e4e4e4;height:100%; position:absolute; top:0; bottom:0}
 #side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;margin-bottom:75px;}
-#side nav li{margin-bottom:15px;padding-right:5px;text-align:right;}
+#side nav li{margin-bottom:15px;padding-right:5px;text-align:right; list-style:none}
 #side nav li.current a{color:#333;}
 #side nav li.current a:hover{ background:none;}
 /*footer*/
@@ -22,6 +22,9 @@ footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:
 #main nav.article a:hover{border-radius:3px;}
 
 #content{padding:5px;}
+	.cont_block{display:none}
+	.active_block{display:block;-webkit-animation-name:slideinfromleft;}
+	
 #content h1{font-size:30px; color:#348ba9; padding:5px 5px 15px; font-weight:bold}
 #content h2{font-size:20px; color:#f47d5f;}
 #content p{ line-height:180%; font-size:14px; margin-bottom:10px;}
@@ -38,4 +41,127 @@ footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:
 html, body{height:auto; overflow:auto}
 footer{display:none}
 a.github{display:none!important}
+}
+/* Transitions from jQtouch (with small modifications): http://www.jqtouch.com/
+Built by David Kaneda and maintained by Jonathan Stark.
+*/
+.in,.out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 350ms;
+}
+.slide.in {
+    -webkit-transform: translateX(0);
+    -webkit-animation-name: slideinfromright;
+}
+
+.slide.out {
+    -webkit-transform: translateX(-100%);
+    -webkit-animation-name: slideouttoleft;
+}
+
+.slide.in.reverse {
+    -webkit-transform: translateX(0);
+    -webkit-animation-name: slideinfromleft;
+}
+.slide.out.reverse {
+    -webkit-transform: translateX(100%);
+    -webkit-animation-name: slideouttoright;
+}
+
+.slideup.in {
+    -webkit-transform: translateY(0);
+    -webkit-animation-name: slideinfrombottom;
+    z-index: 10;
+}
+.slideup.out {
+    -webkit-animation-name: dontmove;
+    z-index: 0;
+}
+.slideup.out.reverse {
+    -webkit-transform: translateY(100%);
+    z-index: 10;
+    -webkit-animation-name: slideouttobottom;
+}
+
+.slideup.in.reverse {
+    z-index: 0;
+    -webkit-animation-name: dontmove;
+}
+.slidedown.in {
+    -webkit-transform: translateY(0);
+    -webkit-animation-name: slideinfromtop;
+    z-index: 10;
+}
+
+.slidedown.out {
+    -webkit-animation-name: dontmove;
+    z-index: 0;
+}
+
+.slidedown.out.reverse {
+    -webkit-transform: translateY(-100%);
+    z-index: 10;
+    -webkit-animation-name: slideouttotop;
+}
+.slidedown.in.reverse {
+    z-index: 0;
+    -webkit-animation-name: dontmove;
+}
+
+@-webkit-keyframes slideinfromright {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+@-webkit-keyframes slideinfromleft {
+    from { -webkit-transform: translateX(-100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+@-webkit-keyframes slideouttoleft {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideouttoright {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(100%); }
+}
+
+
+@-webkit-keyframes slideinfromtop {
+    from { -webkit-transform: translateY(-100%); }
+    to { -webkit-transform: translateY(0); }
+}
+
+@-webkit-keyframes slideinfrombottom {
+    from { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(0); }
+}
+
+@-webkit-keyframes slideouttobottom {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(100%); }
+}
+@-webkit-keyframes slideouttotop {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(-100%); }
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade.in {
+    opacity: 1;
+    z-index: 10;
+    -webkit-animation-name: fadein;
+}
+.fade.out {
+    z-index: 0;
+    -webkit-animation-name: fadeout;
 }

@@ -2,7 +2,7 @@
 function formatText(text) {
 	return new Showdown.converter().makeHtml(text);	
 };
-function loadArticle(path){
+function loadArticle(cont,path){
 	$.ajax({
 		url:path,
 		dataType:"text",
@@ -13,8 +13,8 @@ function loadArticle(path){
 		error:function(){},
 		success:function(data){
 			selected_languages = LANGUAGES;
-			$("#content").html(formatText(data));
-			$("#content").children("pre").each(function(){
+			$(cont).html(formatText(data));
+			$(cont).children("pre").each(function(){
 				 initHighlight($(this).children("code")[0]);	
 			});
 		}
@@ -65,9 +65,11 @@ require.prototype.init=function(){
 };
 require.prototype.loadURL=function(){
 	var dir=this.URL.dir;
+	var act_block=$("#content > div.cont_block.active_block")[0];
+	var new_block=$("#content > div.cont_block."+dir)[0]||$("<div class='cont_block "+dir+"' />").appendTo("#content")[0];
 	switch(dir){
 	case 'blog':
-	 loadArticle(this.URL.path);
+	 loadArticle(new_block,this.URL.path);
 	 break;
 	case 'twitter':
 		break;
@@ -78,7 +80,8 @@ require.prototype.loadURL=function(){
 	default:
 		
 	}
-	
+	$(act_block).addClass("slide out").delay(2000).removeClass("slide out active_block");
+	$(new_block).addClass("active_block");
 };
 requ=new require();
 jQuery(function($){
