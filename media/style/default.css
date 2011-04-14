@@ -48,15 +48,21 @@ Built by David Kaneda and maintained by Jonathan Stark.
 .in,.out {
     -webkit-animation-timing-function: ease-in-out;
     -webkit-animation-duration: 350ms;
+	-moz-animation-timing-function: ease-in-out;
+    -moz-animation-duration: 350ms;
 }
 .slide.in {
     -webkit-transform: translateX(0);
     -webkit-animation-name: slideinfromright;
+	 -moz-transform: translateX(0);
+    -moz-animation-name: slideinfromright;
 }
 
 .slide.out {
     -webkit-transform: translateX(-100%);
     -webkit-animation-name: slideouttoleft;
+	-moz-transform: translateX(-100%);
+    -moz-animation-name: slideouttoleft;
 }
 
 .slide.in.reverse {
