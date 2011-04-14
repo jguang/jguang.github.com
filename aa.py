@@ -1,8 +1,6 @@
 #coding=utf-8
-import codecs
-import os
-import os.path
-print os.getcwd()
-print "======================="
-
+import os,time
+TIMEFORMAT='%Y-%m-%d'
+print time.strftime(TIMEFORMAT,time.localtime(os.stat( "blog/string.txt").st_mtime))
+print time.strftime(TIMEFORMAT,time.localtime(os.stat( "blog/string.txt").st_ctime))
 

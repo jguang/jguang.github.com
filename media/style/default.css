@@ -14,14 +14,14 @@ html, body{height:100%; width:100%; overflow:hidden}
 /*footer*/
 footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%; display:none}
 /*main*/
-#main{ margin-left:240px;height:100%;overflow-y:auto;}
-#main nav.article{padding:3px 10px;border-radius:3px; background:#ccc; margin:15px 10px 15px 0;}
+#main{ margin-left:240px;height:100%;overflow-x:hidden;}
+#main nav.article{padding:3px 10px;border-radius:3px; background:#ccc; margin-top:10px;}
 #main nav.article a{ font-size:16px; display:inline-block; margin-right:30px;padding:0 3px;}
 #main nav.article a.selected{color:#333;background:none;}
 #main nav.article a span{font-size:10px;padding:0 3px;}
 #main nav.article a:hover{border-radius:3px;}
 
-#content{position:relative;overflow-x:hidden; height:100%}
+#content{position:relative;}
 	.cont_block{display:none; position:absolute;width:100%;}
 	.active_block{display:block;}
 	
