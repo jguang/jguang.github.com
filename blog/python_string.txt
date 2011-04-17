@@ -28,4 +28,33 @@ python字符串操作笔记
   - S.swapcase() #大小写互换 
   - S.capitalize() #首字母大写 
   - S.title() #只有首字母大写，其余为小写，模块中没有这个方法
+  - s=s[::-1] #翻转字符串
 	
+字符串查找
+--------------------------
+
+  - s.index(str)
+  - s.find(str)
+
+字符串转换
+----------------------
+
+  - s.split("str")#根据str分隔字符串s
+  - s[s.find(sStr2) + 1:]  #得到某字符串之后的值
+  - 
+  
+ 字符串格式化
+ --------------------
+ 
+<pre>
+<code class="python">>>#precise = 3
+print "%.3s " % ("jcodeer")
+#precise = 4
+print "%.*s" % (4,"jcodeer")
+#width = 10,precise = 3
+print "%10.3s" % ("jcodeer")
+#输出结果：
+#jco
+#jcod
+#       jco
+#同于字符串也存在精度、度和。</code></pre>
