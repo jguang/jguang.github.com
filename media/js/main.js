@@ -7,9 +7,6 @@ function loadArticle(cont,path){
 		url:path,
 		dataType:"text",
 		cache: false,
-		statusCode: {
-			404:function(){alert("页面没有发现");}	 
-		},
 		error:function(){},
 		success:function(data){
 			selected_languages = LANGUAGES;
@@ -91,7 +88,13 @@ requ=new require();
 jQuery(function($){
 	if($.browser.msie){$('body').html('<div style="font-size:50px;color:#f00;text-align:center">太OUT了 还在用IE!! 弃用IE从你我做起，推荐更换为<a href="http://www.mozilla.com/">firefox</a>，<a href="http://www.google.com/chrome/intl/en/landing_chrome.html?hl=en">chrome</a>浏览器</div>')}
 	$("#loading").ajaxStart(function(){
-		$(this).text("loading");	
+		$(this).show(10).text("loading......");
+			
+	}).ajaxError(function(){
+		$(this).text("载入出错，请重新载入");	
+		
+	}).ajaxStop(function(){
+		//$(this).text("stoped.").hide(20);
 	});
 	window.onhashchange=function(){
 		requ.init();
