@@ -94,7 +94,7 @@ jQuery(function($){
 		$(this).text("载入出错，请重新载入");	
 		
 	}).ajaxStop(function(){
-		//$(this).text("stoped.").hide(20);
+		$(this).text("stoped.").hide(20);
 	});
 	window.onhashchange=function(){
 		requ.init();
