@@ -1,8 +1,24 @@
-  - [python列表操作]-2011-04-17
-  - [python字符串操作笔记]-2011-04-17
-  - [python时间操作]-2011-04-15
+  - [Canvas学习比较]-2012-01-16
+  - [chrome扩展笔记]-2012-01-16
+  - [css3边学边记录]-2012-01-16
+  - [git记录小记]-2012-01-16
+  - [HTML5记录]-2012-01-16
+  - []-2012-01-16
+  - [python列表操作]-2012-01-16
+  - [python边学边记录]-2012-01-16
+  - [python字符串操作笔记]-2012-01-16
+  - [HTML5中的   表单验证]-2012-01-16
+  - [python时间操作]-2012-01-16
 
 
+  [Canvas学习比较]: #blog/canvas-note.txt
+  [chrome扩展笔记]: #blog/chrome-note.txt
+  [css3边学边记录]: #blog/css3.txt
+  [git记录小记]: #blog/git_one.txt
+  [HTML5记录]: #blog/HTML5.txt
+  []: #blog/javascript_algorithm .txt
   [python列表操作]: #blog/python_list.txt
+  [python边学边记录]: #blog/python_one.txt
   [python字符串操作笔记]: #blog/python_string.txt
+  [HTML5中的   表单验证]: #blog/string.txt
   [python时间操作]: #blog/time.txt

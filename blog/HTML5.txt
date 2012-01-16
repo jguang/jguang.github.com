@@ -1,0 +1,32 @@
+HTML5记录
+=============================
+
+1. **postMessage & message**:<br/>
+http://www.whatwg.org/specs/web-apps/current-work/multipage/web-messaging.html#posting-messages<br/>
+http://bbs.phpchina.com/thread-229298-1-1.html<br/>
+http://code.google.com/p/message-event/<br/>
+
+ - window.postMessage(数据,域);
+ - window.onmessage(event); event.data:传的数据，event.origin: post域名，event.source: post窗口
+ - document.referrer 返回载入文档来源的url，iframe嵌套的referrer的值都为最上层的url;
+ 
+2. **online & offline事件**
+http://www.ibm.com/developerworks/cn/web/1011_guozb_html5off/<br/>
+http://html5demos.com/offlineapp<br/>
+
+ -  navigator.onLine判断是否在线
+ - online/offline事件可以触发在线或者掉线，作用于body、window; window还不支持.on事件
+
+
+3. **manifest缓存**
+http://sofish.de/1449<br/>
+http://www.w3.org/TR/html5/offline.html#some-sample-manifests<br/>
+
+ - CACHE :缓存，NETWORK: 不缓存，FACKBACK：指当没有响应时的替代方案，比如我想请求某个页面，但这个页面的服务器挂了，那么，我可以显示另外一个指定的页面  
+ - "#" 注释
+ - 给 <html> 标签加 manifest 属性
+ 
+
+
+
+

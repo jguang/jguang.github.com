@@ -20,6 +20,6 @@ for f in os.listdir(rootdir):
       
 catafile.write(string+"\n\n"+link)
 catafile.close()
-print "======================="
+print "success=============="
 
 
