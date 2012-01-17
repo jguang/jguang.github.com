@@ -1,4 +1,4 @@
-HTML5中的   表单验证
+HTML5中的表单验证
 =====
 
 Using this tool
