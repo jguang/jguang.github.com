@@ -1,9 +1,12 @@
 Canvas小记
 =============================
 
+**链接**:<br/>
 
  - http://codeex.cn/wp-content/uploads/2010/10/20101026184905_HTML5-Canvas.pdf
  - http://www.w3school.com.cn/htmldom/dom_obj_canvasrenderingcontext2d.asp
+
+**NOTE**:<br/>
 
 1. canvas的默认宽高为300 150 
 2. 如canvas有样式设置宽高，侧canvas内的元素按照比例进行绘制；

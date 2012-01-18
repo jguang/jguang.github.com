@@ -26,7 +26,13 @@ http://www.w3.org/TR/html5/offline.html#some-sample-manifests<br/>
  - "#" 注释
  - 给 <html> 标签加 manifest 属性
  
+4. ***localStorage && sessionStorage**<br/>
+http://js8.in/802.html<br/>
+http://www.yiiyaa.net/1344<br/>
 
+ - localStorage永久存储 session会话存储;
+ - 即支持对象点“.”操作又支持getItem(key),setItem(key)
+ - 有方法clear():清楚，getItem(key):给值；setItem(key):设值；removeItem(key):删除某值；key(num):key值，按照倒序,后赋值的为0;
 
 
 
