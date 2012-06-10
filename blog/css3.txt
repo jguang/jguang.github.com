@@ -1,4 +1,4 @@
-css3边学边记录
+css3记录
 =============================
 
 http://dev.w3.org/csswg/ <br/>
@@ -39,7 +39,8 @@ http://www.w3.org/TR/css3-background/#the-background-clip<br/>
 
 5. **animation**<br/>
 http://www.w3.org/TR/css3-animations/<br/>
-http://playground.html5rocks.com/#animations
+http://playground.html5rocks.com/#animations<br/>
+http://atrl.me/archives/css3-animation<br/>
 
  - 简写书顺序不能省略和顺序错误: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction
  - 事件animationstart，animationend,animationiteration对webkit对应脚本:webkitAnimationStart.....
@@ -51,6 +52,15 @@ http://playground.html5rocks.com/#transitions
 http://dev.w3.org/csswg/css3-transitions/
 
  - 简写顺序可以打乱 transition-property’> || <‘transition-duration’> || <‘transition-timing-function’> || <‘transition-delay’>
+ 
+7. **盒子模型**<br/>
+http://www.ibm.com/developerworks/cn/web/1202_zhouxiang_css3/<br/>
+http://www.rainleaves.com/html/1122.html<br/>
+http://www.rainleaves.com/html/1095.html<br/>
+http://blog.imbolo.com/the-css3-flexible-box-model/<br/>
+
+
+
 
 
  
