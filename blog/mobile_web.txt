@@ -27,19 +27,21 @@ http://fe.baidu.com/doc/ge/mobile/<br/>
  - http://blog.darkthread.net/post-2011-10-02-html5-mutli-touch.aspx
  - http://code.google.com/intl/zh-CN/mobile/articles/webapp_fixed_ui.html#halting
 
-4.metab标签
+4. metab标签
 
  - <meta content="yes" name="apple-mobile-web-app-capable" />safari私有meta标签，它表示：允许全屏模式浏览；
  - <meta content="telephone=no" name="format-detection" /> 告诉设备忽略将页面中的数字识别为电话号码
  - <meta content="email=no" name="format-detection" />去除Android平台中对邮箱地址的识别
 
-5.css media
+5. css media
  - http://www.w3.org/TR/css3-mediaqueries/ <br/>
- - 
+ 
  
 6. 获取window的高度浏览器不一致:
  - http://www.highdots.com/forums/javascript/how-can-i-get-visible-295637.html
  - http://www.quirksmode.org/m/w3c_cssom.html#t00
 
+7. 手机输入时调用内部数字键盘、日期控件等；
 
+ - 采用html5 input的type为相应类型即可；demo:http://zc.m.taobao.com/?sid=d4b3286ca609c09c&spm=41.302793.273016.7&sprefer=p23596;http://www.w3school.com.cn/html5/html_5_form_input_types.asp
 
