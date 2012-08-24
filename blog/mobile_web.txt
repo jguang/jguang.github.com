@@ -41,5 +41,7 @@ http://fe.baidu.com/doc/ge/mobile/<br/>
  - http://www.highdots.com/forums/javascript/how-can-i-get-visible-295637.html
  - http://www.quirksmode.org/m/w3c_cssom.html#t00
 
+7. 手机输入时调用内部数字键盘、日期控件等；
 
+ - 采用html5 input的type为相应类型即可；demo:http://zc.m.taobao.com/?sid=d4b3286ca609c09c&spm=41.302793.273016.7&sprefer=p23596;http://www.w3school.com.cn/html5/html_5_form_input_types.asp
 
