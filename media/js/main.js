@@ -50,7 +50,7 @@ require.prototype.init=function(){
 		urlary.unshift('');
 	};
 	if($.trim(urlary[len-1])==''){
-		urlary[len-1]='catalog.txt';
+		urlary[len-1]='catalog.md';
 	}
 	else if($.trim(urlary[len-1])!=''&& urlary[len-1].lastIndexOf('.')==-1){
 		urlary[len]='catalog.md';
