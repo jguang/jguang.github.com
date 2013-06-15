@@ -53,7 +53,7 @@ require.prototype.init=function(){
 		urlary[len-1]='catalog.txt';
 	}
 	else if($.trim(urlary[len-1])!=''&& urlary[len-1].lastIndexOf('.')==-1){
-		urlary[len]='catalog.txt';
+		urlary[len]='catalog.md';
 	};
 	this.URL.dir=urlary[0];
 	this.URL.path=urlary.join("/");
