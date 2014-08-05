@@ -1,3 +1,6 @@
+#coding=utf-8
+# logging handlers TimedRotatingFileHandler
+
 import logging
 from logging.handlers import TimedRotatingFileHandler
 
