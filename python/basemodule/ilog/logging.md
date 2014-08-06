@@ -72,19 +72,19 @@
            'exception', 'fatal', 'getLevelName', 'getLogger', 'getLoggerClass',
            'info', 'log', 'makeLogRecord', 'setLoggerClass', 'warn', 'warning']
 
-	getLogger 使获取实例化的Logger，Logger是核心封装层,提供最终日志的输出及其他方法实例化调用
+getLogger 使获取实例化的Logger，Logger是核心封装层,提供最终日志的输出及其他方法实例化调用
 	
 	`__init__.py` #1197行 `fatal = critical`
 
 	
-	logging有两个子对象`logging.handlers`  `logging.config`
-	[官方文档](https://docs.python.org/2/library/logging.handlers.html#logging.StreamHandler)
+logging有两个子对象`logging.handlers`  `logging.config`
+[官方文档](https://docs.python.org/2/library/logging.handlers.html#logging.StreamHandler)
 
-
-	一般采用logging.config.fileconfig进行载入配置，[文件格式](https://docs.python.org/2/library/logging.config.html#configuration-file-format)
+一般采用logging.config.fileconfig进行载入配置，[文件格式](https://docs.python.org/2/library/logging.config.html#configuration-file-format)
 	
 
 7. 注意点
 
 	- handler设置的文件不能是同一个，否侧出错
+
 	
