@@ -7,7 +7,7 @@
 
 	是用来说明脚本语言是python的
 
-	是要用/usr/bin下面的程序（工具）python，这个解释器，来解释python脚本，来运行python脚本的。
+	要用/usr/bin下面的程序（工具）python，这个解释器，来解释python脚本，来运行python脚本的。
 
 2. `# -*- coding: utf-8 -*-`
 
