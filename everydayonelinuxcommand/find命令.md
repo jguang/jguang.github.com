@@ -7,7 +7,7 @@
 `find` 目录 [目录]  `-name` 文件名字  //精确查找
 `find` 目录 [目录]  `-iname` 文件名字 //不区分大小写
 
-example：
+**example：**
 
 - 查找当前用户目录下的index.php文件
 	
@@ -25,8 +25,6 @@ example：
 
 `*` 通配任意字符
 
-example：
-
 	➜  ~  find . -name 'index.*p'
 	./.fis-tmp/cache/compile/release-hash/index.html-c-a20f503f4e.tmp
 	./.fis-tmp/cache/compile/release-hash-domain/index.html-c-a20f503f4e.tmp
@@ -42,26 +40,27 @@ example：
 	➜  ~  find . -name 'index.[pa]?p'
 	./study/www/index.php
 
+
 根据用户查找：
 
-`-user` 根据用户查找
+    `-user` 根据用户查找
 
-`-group` 根据组来查找
+    `-group` 根据组来查找
 
 
 根据uid gid来查找
 
-`-uid` 根据用户id来查找
+    `-uid` 根据用户id来查找
 
-`-gid` 根据gid来查找
+    `-gid` 根据gid来查找
 
 根据附加条件满足
 
-`-a` 连接两个不同的条件
+    `-a` 连接两个不同的条件
 
-`-o` 连接两个条件 满足一个就可以
+    `-o` 连接两个条件 满足一个就可以
 
-`-not` 对条件取反
+    `-not` 对条件取反
 
 
 
@@ -76,19 +75,19 @@ example：
 
 
 ### -type
-                      f     // 普通文件
-                      d     //目录文件
-                      l     //链接文件
-                      b     //块设备文件
-                      c     //字符设备文件
-                      p     //管道文件
-                      s     //socket文件
+
+    f     // 普通文件
+    d     //目录文件
+    l     //链接文件
+    b     //块设备文件
+    c     //字符设备文件
+    p     //管道文件
+    s     //socket文件
                       
                       
 
 
 
-**参考资料：
-**
+**参考资料:**
 
 - http://blog.chinaunix.net/uid-24648486-id-2998767.html
