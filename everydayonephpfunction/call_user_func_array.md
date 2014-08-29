@@ -29,9 +29,46 @@
 	foobar got one and two
 	foo::bar got three and four
 
+call_user_func_array可以直接引用类的方法， 但方法中函数不能直接使用this,最好为静态方法，
+
+	
+		Class ClassA   
+		{   
+			private $aa = "ccc";  
+			function bc($b, $c) {   
+		     	//echo $this->aa;
+				//var_dump($this);
+		     	$bc = $b + $c;   
+				echo $bc;   
+			} 
+
+			static function  hell($b, $c){
+				$bc = $b + $c;   
+				echo $bc; 	
+			}
+		}  
+		echo 222;
+		$cc = new ClassA();
+		call_user_func_array(array($cc,'bc'), array("111", "222"));
+
+		call_user_func_array(array("ClassA",'bc'), array("111", "222"));
+
+		call_user_func_array(array("ClassA",'hell'), array("111", "222"));
+
+
+
+		echo 00;
+
 
 
 ###参考文档：
 
-http://www.hankcs.com/program/call_user_func_array.html
+ - http://www.hankcs.com/program/call_user_func_array.html
+
+
+ - http://www.cnitblog.com/neatstudio/archive/2012/07/12/13990.html
+
+ - http://www.hankcs.com/program/call_user_func_array.html
+
+ - http://www.nowamagic.net/librarys/veda/detail/1509
 
