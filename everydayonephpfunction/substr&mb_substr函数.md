@@ -22,10 +22,12 @@ case:
         ?>
 
 
+
+
 ##注意要点
 
 1. 如截取出错返回值为false;var_dump(substr("string", 1, -100));
-2. 
+
 
 
 ##参考
