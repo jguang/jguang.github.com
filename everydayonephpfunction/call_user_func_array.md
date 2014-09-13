@@ -29,7 +29,9 @@
 	foobar got one and two
 	foo::bar got three and four
 
-call_user_func_array可以直接引用类的方法， 但方法中函数不能直接使用this,最好为静态方法，
+
+call_user_func_array可以直接引用类的方法， 但方法中函数不能直接使用this,最好为静态方法，类可以为对象侧可以使用不是类的方法了；
+
 
 	
 		Class ClassA   
