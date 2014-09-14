@@ -13,3 +13,11 @@
 
     git show            # 显示某次提交的内容
     git show $id
+
+
+    //回退某个文件到commitId
+    git reset $commitId $file//回退
+    git commit -m "revert old file because yjl commmit have a bug"//commit
+    git checkout $file //更新到本地
+
+
