@@ -33,3 +33,4 @@ case:
 ##参考
 
 - http://cn2.php.net/substr
+- http://www.uw3c.com/phpviews/php06.html
