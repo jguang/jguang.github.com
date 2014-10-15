@@ -4,7 +4,7 @@
     Object.create(object[, Properties] )；
 
     按照原型链object创建对象obj；
-    如果传入了 Properties 参数并且不是 undefined, 则仿佛是用 obj 和 Properties 当作参数调用标准内置函数 Object.defineProperties 一样给 obj 添加自身属性。
+    如果传入了 Properties 参数并且不是 undefined, 则是用 obj 和 Properties 当作参数调用标准内置函数 Object.defineProperties 一样给 obj 添加自身属性。
 
 
 example：

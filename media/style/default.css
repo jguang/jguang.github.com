@@ -1,119 +1,158 @@
-@charset "utf-8";
-/* CSS Document */
 
+@charset "utf-8";
+
+
+/* CSS Document */
 body{font:14px/1.5 "Microsoft Yahei",Tahoma,Arial,Helvetica,STHeiti; color:#484848; text-shadow:0 1px 1px white}
+
 a{color:#36c;text-decoration:none;}
+
 section a:hover{ text-decoration:none; background-color:#36c; color:#fff;-webkit-transition:all .2s ease-in;-ms-transition:all .2s ease-in;-moz-transition:all .2s ease-in;text-shadow:0 1px 1px 36c;border-radius:3px;padding-left:2px; padding-right:2px;}
+
 html, body{height:100%; width:100%; overflow:hidden}
+
 /*side*/
 #side{ width:230px; background:#e4e4e4;height:100%; position:absolute; top:0; bottom:0}
+
 #side header{width:203px; height:194px; background:url(images/logo.png) 0 0 no-repeat; margin:15px auto;margin-bottom:75px;}
+
 #side nav li{margin-bottom:15px;padding-right:5px;text-align:right; list-style:none}
+
 #side nav li.current a{color:#333;}
+
 #side nav li.current a:hover{ background:none;}
+
 /*footer*/
 footer{ height:207px; background:url(images/footer.png) 0 0 no-repeat; position:absolute; bottom:0;left:0; width:100%; display:none}
+
 /*main*/
 #main{ margin-left:240px;height:100%;overflow-x:hidden;position:relative;}
+
 #main nav.article{padding:3px 10px;border-radius:3px; background:#ccc; margin-top:10px;}
+
 #main nav.article a{ font-size:16px; display:inline-block; margin-right:30px;padding:0 3px;}
+
 #main nav.article a.selected{color:#333;background:none;}
+
 #main nav.article a span{font-size:10px;padding:0 3px;}
+
 #main nav.article a:hover{border-radius:3px;}
 
 #content{position:relative;}
-	.cont_block{display:none; position:absolute;width:100%;}
-	.active_block{display:block;}
-	
+
+.cont_block{display:none; position:absolute;width:100%;}
+
+.active_block{display:block;}
+
 #content h1{font-size:30px; color:#348ba9; padding:5px 5px 15px; font-weight:bold}
+
 #content h2{font-size:20px; color:#f47d5f;}
+
 #content p{ line-height:180%; font-size:14px; margin-bottom:10px;}
+
 /*#content ul li:before{content:"★"; display:inline-block;margin-right:5px;}*/
 #content a:hover{}
-#content pre{margin-bottom:10px;}
 
+#content pre{margin-bottom:10px;}
 
 #loading{ position:absolute; top:50%; left:50%; width:250px; height:110px; margin-left:-225px; margin-top:-55px; border-radius:5px; background:#ccc; font-size:16px; font-weight:600; line-height:110px; color:#f47d5f; text-align:center;-webkit-animation:glow 2s ease-in-out infinite; }
 
 @media handheld, only screen and (max-width: 800px){
-#main{ margin:10px auto;}
-#side{ float:none;width:100%}
-#side header{ display:none}
-#side nav li{ display:inline-block; text-align:left}
-html, body{height:auto; overflow:auto}
-footer{display:none}
-a.github{display:none!important}
+    #main{ margin:10px auto;}
+
+    #side{ float:none;width:100%}
+
+    #side header{ display:none}
+
+    #side nav li{ display:inline-block; text-align:left}
+
+    html, body{height:auto; overflow:auto}
+
+    footer{display:none}
+
+    a.github{display:none!important}
 }
+
 /* Transitions from jQtouch (with small modifications): http://www.jqtouch.com/
 Built by David Kaneda and maintained by Jonathan Stark.
 */
 .in,.out {
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 350ms;
-	-moz-animation-timing-function: ease-in-out;
-    -moz-animation-duration: 350ms;
+    -webkit-animation-duration        : 350ms;
+    -moz-animation-duration           : 350ms;
+    -webkit-animation-timing-function : ease-in-out;
+    -moz-animation-timing-function    : ease-in-out;
 }
+
 .slide.in {
-    -webkit-transform: translateX(0);
-    -webkit-animation-name: slideinfromright;
-	 -moz-transform: translateX(0);
-    -moz-animation-name: slideinfromright;
+    -webkit-animation-name : slideinfromright;
+    -moz-animation-name    : slideinfromright;
+    -webkit-transform      : translateX(0);
+    -moz-transform         : translateX(0);
 }
 
 .slide.out {
-    -webkit-transform: translateX(-100%);
-    -webkit-animation-name: slideouttoleft;
-	-moz-transform: translateX(-100%);
-    -moz-animation-name: slideouttoleft;
+    -webkit-animation-name : slideouttoleft;
+    -moz-animation-name    : slideouttoleft;
+    -webkit-transform      : translateX(-100%);
+    -moz-transform         : translateX(-100%);
 }
 
 .slide.in.reverse {
-    -webkit-transform: translateX(0);
-    -webkit-animation-name: slideinfromleft;
+    -webkit-animation-name : slideinfromleft;
+    -webkit-transform      : translateX(0);
 }
+
 .slide.out.reverse {
-    -webkit-transform: translateX(100%);
-    -webkit-animation-name: slideouttoright;
+    -webkit-animation-name : slideouttoright;
+    -webkit-transform      : translateX(100%);
 }
 
 .slideup.in {
-    -webkit-transform: translateY(0);
-    -webkit-animation-name: slideinfrombottom;
-    z-index: 10;
+    z-index                : 10;
+
+    -webkit-animation-name : slideinfrombottom;
+    -webkit-transform      : translateY(0);
 }
+
 .slideup.out {
-    -webkit-animation-name: dontmove;
-    z-index: 0;
+    z-index                : 0;
+    -webkit-animation-name : dontmove;
 }
+
 .slideup.out.reverse {
-    -webkit-transform: translateY(100%);
-    z-index: 10;
-    -webkit-animation-name: slideouttobottom;
+    z-index                : 10;
+
+    -webkit-animation-name : slideouttobottom;
+    -webkit-transform      : translateY(100%);
 }
 
 .slideup.in.reverse {
-    z-index: 0;
-    -webkit-animation-name: dontmove;
+    z-index                : 0;
+    -webkit-animation-name : dontmove;
 }
+
 .slidedown.in {
-    -webkit-transform: translateY(0);
-    -webkit-animation-name: slideinfromtop;
-    z-index: 10;
+    z-index                : 10;
+
+    -webkit-animation-name : slideinfromtop;
+    -webkit-transform      : translateY(0);
 }
 
 .slidedown.out {
-    -webkit-animation-name: dontmove;
-    z-index: 0;
+    z-index                : 0;
+    -webkit-animation-name : dontmove;
 }
 
 .slidedown.out.reverse {
-    -webkit-transform: translateY(-100%);
-    z-index: 10;
-    -webkit-animation-name: slideouttotop;
+    z-index                : 10;
+
+    -webkit-animation-name : slideouttotop;
+    -webkit-transform      : translateY(-100%);
 }
+
 .slidedown.in.reverse {
-    z-index: 0;
-    -webkit-animation-name: dontmove;
+    z-index                : 0;
+    -webkit-animation-name : dontmove;
 }
 
 @-webkit-keyframes slideinfromright {
@@ -130,11 +169,11 @@ Built by David Kaneda and maintained by Jonathan Stark.
     from { -webkit-transform: translateX(0); }
     to { -webkit-transform: translateX(-100%); }
 }
+
 @-webkit-keyframes slideouttoright {
     from { -webkit-transform: translateX(0); }
     to { -webkit-transform: translateX(100%); }
 }
-
 
 @-webkit-keyframes slideinfromtop {
     from { -webkit-transform: translateY(-100%); }
@@ -150,10 +189,12 @@ Built by David Kaneda and maintained by Jonathan Stark.
     from { -webkit-transform: translateY(0); }
     to { -webkit-transform: translateY(100%); }
 }
+
 @-webkit-keyframes slideouttotop {
     from { -webkit-transform: translateY(0); }
     to { -webkit-transform: translateY(-100%); }
 }
+
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -163,24 +204,34 @@ Built by David Kaneda and maintained by Jonathan Stark.
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
 @-webkit-keyframes "glow" {
     0% {
-        -webkit-box-shadow: 0 0 10px  rgba(100,100,100,0.153);
+        -webkit-box-shadow : 0 0 10px  rgba(100,100,100,0.153);
     }
+
     50% {
-        -webkit-box-shadow: 0 0 40px rgba(100,100,100,0.45);
+        -webkit-box-shadow : 0 0 40px rgba(100,100,100,0.45);
     }
+
     100% {
-        -webkit-box-shadow: 0 0 10px  rgba(100,100,100,0.153)
+        -webkit-box-shadow : 0 0 10px  rgba(100,100,100,0.153)
     }
 }
 
 .fade.in {
-    opacity: 1;
-    z-index: 10;
-    -webkit-animation-name: fadein;
+    z-index                : 10;
+
+    opacity                : 1;
+
+    -webkit-animation-name : fadein;
 }
+
 .fade.out {
-    z-index: 0;
-    -webkit-animation-name: fadeout;
+    z-index                : 0;
+    -webkit-animation-name : fadeout;
+}
+
+.aa,#cc{
+    
 }
