@@ -17,7 +17,7 @@
   testtesttest
 </body>
 <script type="text/javascript">
-if ('serviceWorker' in ) {
+if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/demo/service-worker.js', {
         scope: '/demo/'
     }).then(function(reg) {
