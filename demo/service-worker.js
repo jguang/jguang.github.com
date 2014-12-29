@@ -19,6 +19,7 @@ this.oninstall = function(e) {
 };
  
 this.onfetch = function(e) {
+    console.log(event.request);
     e.respondWith(
         // Check to see if request is found in cache
         caches.match(e.request).catch(function() {
