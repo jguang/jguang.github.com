@@ -1,4 +1,4 @@
-this.oninstall = function(e) {
+/*this.oninstall = function(e) {
     // Create a cache of resources.
     var resources = new Cache();
     var visited = new Cache();
@@ -16,9 +16,10 @@ this.oninstall = function(e) {
             caches.set("visited", visited)
         ]);
     }));
-};
+    
+};*/
  
-this.onfetch = function(e) {
+/*this.onfetch = function(e) {
     console.log(event.request);
     e.respondWith(
         // Check to see if request is found in cache
@@ -36,4 +37,17 @@ this.onfetch = function(e) {
             return caches.match("/fallback.html");
         });
     );
+};*/
+self.onfetch = function(event) {
+  console.log('got a request');
+  var salutation = 'Hello, ';
+  var whom = decodeURIComponent(event.request.url.match(/\/([^/]*)$/)[1]);
+  var energy_level = (whom == 'Cleveland')
+      ? '!!!' // take it up to 11
+      : '!';
+  var version = '\n\n(Version 1)';
+
+  var body = new Blob([salutation, whom, energy_level, version]);
+
+  event.respondWith(new Response(body));
 };

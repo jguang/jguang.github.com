@@ -1,4 +1,6 @@
 this.addEventListener('install', function(event) {
+  console.log(Cache);
+  controls.log(caches);
   event.waitUntil(
     caches.create('v1').then(function(cache) {
       return cache.add(

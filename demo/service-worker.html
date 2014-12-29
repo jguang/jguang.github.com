@@ -1,33 +1,50 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <!--
-    <script>
-        // scope defaults to "/*"
-        navigator.serviceWorker.register("/demo/service-worker.js").then(function(serviceWorker) {
-            console.log("success!");
-            // To use the serviceWorker immediately,
-            // you might call window.location.reload()
-        });
-    </script>
-  -->
-  </head>
-<body>
-  testtesttest
-</body>
-<script type="text/javascript">
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/demo/service-worker.js', {
-        scope: '/demo/'
-    }).then(function(reg) {
-        console.log('Yey!', reg);
-    }).catch(function(err) {
-        console.log('Boo!', err);
+<!--
+Copyright 2014 Google Inc. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<script>
+var scope = 'hello/';
+var registration;
+
+function register() {
+  navigator.serviceWorker.register('service-worker.js', {scope: scope})
+    .then(function(r) {
+      console.log('registered: ');
+      registration = r;
+      console.log(registration);
+    })
+    .catch(function(whut) {
+      console.error('uh oh... ');
+      console.error(whut);
     });
-}else{
-    console.log("navigator.serviceWorker is ")
 }
- 
+
+function unregister() {
+  registration.unregister()
+    .then(function() {
+      console.log('unregistered');
+    });
+}
 </script>
-</html>
+<button onclick="register()">Register</button>
+<button onclick="unregister()">Unregister</button>
+
+<p>Some nice places to visit:
+
+<ul>
+<li><a href="hello/world">world</a>
+<li><a href="hello/Cleveland">Cleveland</a>
+</ul>
