@@ -18,6 +18,7 @@
         return str && (str.replace(/-([a-z])/g,function(s){return s.toUpperCase();}))
     }
 
+
 ##offset
 
     function getOffset( dom ){
