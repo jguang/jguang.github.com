@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+  <div style="max-width: 700px; margin: 0 auto 0 auto;">
+    <button id="swinstall">Install Service Worker</button>
+    <button id="swuninstall">Uninstall Service Worker</button>
+    <div id="js-log" style="height: 400px; overflow: scroll; color: white; background: black; font-family: monospace; line-height: 150%; font-size: 12px; padding: 7px;"></div> 
+    <a href="http://mattandre.ws">mattandre.ws</a> <a href="http://twitter.com/andrewsmatt">@andrewsmatt</a>
+  </div>
+  <script>
+    window.addEventListener('message', function() {
+      debugger;
+    });
+
+    function log() {
+      var el = document.createElement('div');
+      el.innerHTML = Array.prototype.join.call(arguments, '<br />');
+      document.getElementById('js-log').appendChild(el);
+    }
+
+    if (navigator.serviceWorker) {
+      log("Browser supports Service Worker");
+      if (navigator.serviceWorker.current) {
+        log("Current Service Worker state: \\o/");
+        log('Go to chrome://serviceworker-internals/ to see Service Worker debug output');
+      } else {
+        log("No Service Worker active...");
+      }
+
+      document.getElementById('swinstall').addEventListener('click', function() {
+        log('About to try to install a Service Worker');
+        navigator.serviceWorker.register('./worker.js')
+          .then(function(serviceWorker) {
+            log('Successfully installed ServiceWorker');
+            log('Go to chrome://serviceworker-internals/ to see Service Worker debug output');
+            serviceWorker.addEventListener('statechange', function(event) {
+              log("Worker state is now "+event.target.state);
+            });
+          }, function(why) {
+            log('Failed to install:' + why);
+          });
+      });
+
+      document.getElementById('swuninstall').addEventListener('click', function() {
+        log('About to try to uninstall a Service Worker');
+        navigator.serviceWorker.unregister()
+          .then(function() {
+            log('Successfully uninstalled ServiceWorker');
+          }, function(why) {
+            log('Failed to uninstall'+why);
+          });
+      });
+    } else {
+      log("Browser does not support Service Worker, are you using Chrome Canary?  Is the Service Worker flag switched on? chrome://flags/#enable-service-worker");
+    }
+  </script>
+  </body>
+</html>
