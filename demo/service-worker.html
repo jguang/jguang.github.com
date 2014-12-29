@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!--
     <script>
         // scope defaults to "/*"
         navigator.serviceWorker.register("/demo/service-worker.js").then(function(serviceWorker) {
@@ -10,8 +11,23 @@
             // you might call window.location.reload()
         });
     </script>
+  -->
   </head>
 <body>
   testtesttest
 </body>
+<script type="text/javascript">
+if ('serviceWorker' in ) {
+    navigator.serviceWorker.register('/demo/service-worker.js', {
+        scope: '/demo/'
+    }).then(function(reg) {
+        console.log('Yey!', reg);
+    }).catch(function(err) {
+        console.log('Boo!', err);
+    });
+}else{
+    console.log("navigator.serviceWorker is ")
+}
+ 
+</script>
 </html>
