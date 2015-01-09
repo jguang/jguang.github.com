@@ -46,29 +46,12 @@ limitations under the License.
         location.protocol = 'https:';
       }
     </script>
-
-    <link rel="stylesheet" href="../../styles/main.css">
   </head>
 
   <body>
-    <h1>Service Worker Sample: Basic Registration</h1>
-
-    <p>Available in <a href="http://www.chromestatus.com/feature/6561526227927040">Chrome 39+</a></p>
-
-    <p>
-      This sample demonstrates the most basic service worker registration scenario. The script
-      <code>service-worker.js</code> is registered to handle the URL scope <code>./</code>. It is "safe"
-      to register the same script multiple times, it's not necessary to check for a previous registration.
-    </p>
-
-    <p>
-      The sample doesn't track the state of the registered service worker (whether it ends up being redundant,
-      the "worker-in-waiting", etc.), but it's sufficient to ensure that a service worker will control
-      documents under that scope the next time one of them is loaded.
-    </p>
-
+    再次刷新内容改变
     <div class="output">
-      <p>service worker registration: <strong id="status"></strong></p>
+      <p>status: <strong id="status"></strong></p>
     </div>
 
     <script>
@@ -77,10 +60,7 @@ limitations under the License.
         // to the current directory and everything underneath it.
         var regis;
         navigator.serviceWorker.register('./service-worker.js', {scope: './'}).then(function(registration) {
-          // At this point, registration has taken place.
-          // The service worker will not handle requests until this page and any
-          // other instances of this page (in other tabs, etc.) have been
-          // closed/reloaded.
+          console.log(navigator.serviceWorker.controller);
           regis = registration;
           document.querySelector('#status').textContent = 'succeeded';
         }).catch(function(error) {
