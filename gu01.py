@@ -1,7 +1,7 @@
 #coding=utf-8
 import codecs
 import os , time
-import os.path 
+import os.path
 
 rootdir = "blog/"
 catafile = codecs.open("blog/catalog.txt",'w',"utf-8")
@@ -17,7 +17,7 @@ for f in os.listdir(rootdir):
       string+=("  - ["+str1.strip()+"]-"+fileTime+"\n");
       link+="  ["+str1.strip()+"]: #blog/"+f+"\n"
       blog.close()
-      
+
 catafile.write(string+"\n\n"+link)
 catafile.close()
 print "success=============="
