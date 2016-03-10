@@ -31,7 +31,7 @@ Date.UTC
     如果 y 不是 NaN 且 0 ≤ ToInteger(y) ≤ 99, 则令 yr 为 1900+ToInteger(y); 否则令 yr 为 y.
     返回 TimeClip(MakeDate(MakeDay(yr, m, dt), MakeTime(h, min, s, milli))).
 
-Date.now 
+Date.now
 
     now 函数返回一个数字值，它表示调用 now 时的 UTC 日期时间的时间值。
 
@@ -84,5 +84,6 @@ getDay,getMonth从0开始计数
 参考：
 http://lzw.me/pages/ecmascript/#462
 https://github.com/ic4/schedule/wiki/C4%E5%88%86%E4%BA%AB%E4%BC%9A
+http://dygraphs.com/date-formats.html
 
 
