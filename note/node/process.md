@@ -3,13 +3,13 @@
 
 process 是个全局模块，任何地方都可以访问， 它继承于 EventEmitter 类；
 
-全局对象：global, process, console
+>全局对象：global, process, console
 
-全局函数：setTimeout, clearTimeout, setInterval, clearInterval, require, Buffer
+>全局函数：setTimeout, clearTimeout, setInterval, clearInterval, require, Buffer
 
-全局变量：__filename, __dirname
+>全局变量：__filename, __dirname
 
-伪全局变量：module, module.exports, exports
+>伪全局变量：module, module.exports, exports
 
 ## uncaughtException事件
 
@@ -81,13 +81,13 @@ NODE_VERSION, node 版本可以用来判断当前版本和 module 是否一致�
 
 ## 参考
 
-- [Node教程]http://javascript.ruanyifeng.com/nodejs/basic.html#toc11
+- [Node教程](http://javascript.ruanyifeng.com/nodejs/basic.html#toc11)
 
-- [Node 出现 uncaughtException 之后的优雅退出方案]http://www.infoq.com/cn/articles/quit-scheme-of-node-uncaughtexception-emergence/
+- [Node 出现 uncaughtException 之后的优雅退出方案](http://www.infoq.com/cn/articles/quit-scheme-of-node-uncaughtexception-emergence/)
 
-- [Node.js 异步异常的处理与domain模块解析]https://cnodejs.org/topic/516b64596d38277306407936
+- [Node.js 异步异常的处理与domain模块解析](https://cnodejs.org/topic/516b64596d38277306407936)
 
-- [Node稳定性的研究心得]http://satans17.github.io/2014/05/04/node%E7%A8%B3%E5%AE%9A%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6%E5%BF%83%E5%BE%97/
+- [Node稳定性的研究心得](http://satans17.github.io/2014/05/04/node%E7%A8%B3%E5%AE%9A%E6%80%A7%E7%9A%84%E7%A0%94%E7%A9%B6%E5%BF%83%E5%BE%97/)
 
-- [Node.js捕获异常]http://www.alloyteam.com/2013/12/node-js-series-exception-caught/
+- [Node.js捕获异常](http://www.alloyteam.com/2013/12/node-js-series-exception-caught/)
 
