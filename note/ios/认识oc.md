@@ -109,10 +109,14 @@ xxx.m
 
 >因此@protocol一般用作对一些系统Class的扩展，常见的比如对NSString、UIView等。
 
+- ARC, @autoreleasepool
 
+自动释放内存[http://justcoding.iteye.com/blog/1391548]
 
 
 ##参考
 - [iOS学习笔记]http://blog.csdn.net/xyz_lmn/article/details/8907502
 - [OC 中的.h,.m]http://blog.csdn.net/lixing333/article/details/47136885
 - [oc中的变量]http://blog.csdn.net/imanapple/article/details/44453821
+- [xcode插件]http://www.jianshu.com/p/00410d75b83f
+- [xcode插件1]http://www.csdn.net/article/2014-05-04/2819586-the-best-xcode-plugins/1
