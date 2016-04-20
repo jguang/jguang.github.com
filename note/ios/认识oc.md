@@ -120,3 +120,5 @@ xxx.m
 - [oc中的变量]http://blog.csdn.net/imanapple/article/details/44453821
 - [xcode插件]http://www.jianshu.com/p/00410d75b83f
 - [xcode插件1]http://www.csdn.net/article/2014-05-04/2819586-the-best-xcode-plugins/1
+- [oc上手]http://www.cnblogs.com/zzy0471/p/3894307.html
+- [oc方法或者消息] http://blog.csdn.net/lonelyroamer/article/details/7661745

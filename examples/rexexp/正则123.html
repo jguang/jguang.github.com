@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RexExp</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<script>
+ e = /abc{2}/;//将匹配abcc
+re = /(abc){2}/;//将匹配abcabc
+//上面的分组都是捕获性分组
+str = "abcabc ###";
+arr = re.exec(str);
+alert(arr[1]);//abc
+//非捕获性分组 (?:)
+re = /(?:abc){2}/;
+arr = re.exec(str);
+alert(arr);//undefined
+</script>
+</body>
+</html>
