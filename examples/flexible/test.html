@@ -15,7 +15,7 @@
     <script>
     (function(window, document) {
         // 设计稿尺寸
-        var designSourceWidth = 750;
+        var designSourceWidth = 640;
         (function() {
             var viewportEl = document.querySelector('meta[name="viewport"]'),
                 hotcssEl = document.querySelector('meta[name="hotcss"]'),
@@ -42,10 +42,7 @@
         })();
         var hotcss = {};
         hotcss.px2rem = function(px, designWidth) {
-            if (!designWidth) {
-                designWidth = parseInt(hotcss.designWidth, 10)
-            }
-            return parseInt(px, 10) * designSourceWidth / designWidth / 100;
+            return parseInt(px, 10) / 100;
         };
         hotcss.mresize = function() {
             var innerWidth = window.innerWidth;
@@ -72,6 +69,11 @@
     <div style="width:3.2rem;height:1rem;background:#f00;font-size:100%">
         百度一下 <span style="font-size:24px;">百度一下</span>
     </div>
+    <br>
+    <div style="width:50%;height:1rem;background:#f00;font-size:100%">
+        百度一下 <span style="font-size:24px;">百度一下</span>
+    </div>
+
     <br>
     <div style="width:1.6rem;height:0.5rem;background:#f00;font-size:0.12rem">
         百度一下

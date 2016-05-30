@@ -56,7 +56,7 @@ process 是个全局模块，任何地方都可以访问， 它继承于 EventEm
 
 ## process.env
 
-进程执行环境变量
+进程执行环境变量, export命令可查看和添加环境变量 或者在执行 nodejs 程序时添加 process.env 如: NODE_ENV=production node xxx.js
 
 ## process.version
 
@@ -74,6 +74,10 @@ NODE_VERSION, node 版本可以用来判断当前版本和 module 是否一致�
 ## process.nextTick(callback)
 
 下一次循环中调用 callback 回调函数,
+
+## process.platform
+
+当前系统平台，比如Linux
 
 
 

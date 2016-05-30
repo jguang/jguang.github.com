@@ -1,0 +1,14 @@
+export命令
+
+    export [-fnp][变量名称]=[变量设置值]
+
+export 仅限于此次登录操作;
+
+如:
+
+    export NODE_ENV = 'pro'
+
+
+### 参考
+
+- http://www.runoob.com/linux/linux-comm-export.html
