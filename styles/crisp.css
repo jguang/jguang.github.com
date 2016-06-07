@@ -130,7 +130,7 @@ ul, ol {
 }
 code {
 	/*for code highlighting */
-	font-size:1.4em;
+	font-size:0.6em;
 	background: #eee;
 }
 pre {
@@ -208,6 +208,10 @@ h3.post-title {
 }
 .separator, .taglist, .feature-star {
 	color: #ccc;
+}
+.time{
+    font-size: 0.5em;
+    color: #666;
 }
 .taglist a {
 	background-color:#ccc;
