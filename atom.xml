@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jguang.top/"/>
-  <updated>2016-06-07T07:06:15.000Z</updated>
+  <updated>2016-06-07T07:23:27.000Z</updated>
   <id>http://jguang.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -15,12 +15,12 @@
     <link href="http://jguang.top/2016/06/07/%E5%86%99/"/>
     <id>http://jguang.top/2016/06/07/写/</id>
     <published>2016-06-06T16:00:00.000Z</published>
-    <updated>2016-06-07T07:06:15.000Z</updated>
+    <updated>2016-06-07T07:23:27.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;/images/write.jpg&quot; alt=&quot;write&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;想写写&quot;&gt;&lt;a href=&quot;#想写写&quot; class=&quot;headerlink&quot; title=&quot;想写写&quot;&gt;&lt;/a&gt;想写写&lt;/h2&gt;&lt;p&gt;年快过30，少了折腾的心情，可脑子和手都痒，又懒着动嘴就只能想写写了；&lt;/p&gt;
 &lt;h2 id=&quot;平台&quot;&gt;&lt;a href=&quot;#平台&quot; class=&quot;headerlink&quot; title=&quot;平台&quot;&gt;&lt;/a&gt;平台&lt;/h2&gt;&lt;p&gt;扒开了github，原本申请的域名 jguang.top早 CNAME 到了这里， 把原来流水式的东西都挪动了一下，早知道hexo 很受大家推崇，开始折腾了下；&lt;/p&gt;
-&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h2&gt;&lt;p&gt;Hexo 确实很『爽』，把原来Day-one上的几篇东西移了过来； 上最后发现 hexo d 的过程中把原来的都给冲掉了，最后又&lt;code&gt;git push origin master --force&lt;/code&gt;强推了回去；&lt;/p&gt;
+&lt;h2 id=&quot;Hexo&quot;&gt;&lt;a href=&quot;#Hexo&quot; class=&quot;headerlink&quot; title=&quot;Hexo&quot;&gt;&lt;/a&gt;Hexo&lt;/h2&gt;&lt;p&gt;Hexo 确实很『爽』，把原来Day-one上的几篇东西移了过来； 最后发现 &lt;code&gt;hexo d&lt;/code&gt; 的过程中把原来的都给冲掉了，最后又&lt;code&gt;git push origin master --force&lt;/code&gt;强推了回去；&lt;/p&gt;
 &lt;p&gt;找个简单最简单的Theme，自己有时间再重构吧；&lt;/p&gt;
 &lt;h2 id=&quot;学习写东西了&quot;&gt;&lt;a href=&quot;#学习写东西了&quot; class=&quot;headerlink&quot; title=&quot;学习写东西了&quot;&gt;&lt;/a&gt;学习写东西了&lt;/h2&gt;&lt;p&gt;&lt;code&gt;试着写 -&amp;gt; 学写 -&amp;gt; 写&lt;/code&gt; 最后的目的是能够给小暖辅导作文 O(∩_∩)O~；&lt;/p&gt;
 </content>
