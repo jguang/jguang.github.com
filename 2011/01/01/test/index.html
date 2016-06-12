@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link href="https://www.google.com.hk/images/branding/product/ico/googleg_lodp.ico" rel="shortcut icon">
+        <meta name="description" content="写写, 便于记忆">
+        <link rel="alternate" type="application/rss+xml" title="" href="/atom.xml">
+
+        <title>测试 | G-talk</title>
+        <meta name="description" content="{{meta_description}}">
+        <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/styles/crisp.css">
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?9d0651cbf7ae442986a1ee5a194b0b9b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
+    </head>
+    
+		<body class="post-template">
+	
+
+        <header id="header">
+            <h1>
+            <a  href="/">
+            G-talk
+            </a>
+            </h1>
+            <h2><a href="/">写写, 便于记忆</a></h2>
+            <p></p>
+            <div id="follow-icons">
+	<a href="http://github.com/jguang"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="/atom.xml"><i class="fa fa-rss-square fa-2x"></i></a>
+</div>
+<h6><a href="/about">About</a></h6>
+<h6><a href="https://github.com/jguang/jguang.github.com/tree/master/note">Note</a></h6>
+<h6><a href="https://github.com/jguang/jguang.github.com/tree/master/examples">Examples</a></h6>
+        </header>
+
+        <main id="content">
+        
+
+<article class="post">
+
+  2011/01/01
+  
+
+  <h1 class="post-title">测试</h1>
+  <section class="post-content article-entry">
+    <h1 id="JSON-stringify和JSON-parse"><a href="#JSON-stringify和JSON-parse" class="headerlink" title="JSON.stringify和JSON.parse"></a>JSON.stringify和JSON.parse</h1><p>用来json和string互相转化，在数据交换中常用到；</p>
+<pre><code>JSON.stringify(value [, replacer] [, space])
+</code></pre><ul>
+<li>主要说的是第二个参数为转换结果的函数或者数组</li>
+</ul>
+<p>数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> contact = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">contact.firstname = <span class="string">"Jesper"</span>;</span><br><span class="line">contact.surname = <span class="string">"Aaberg"</span>;</span><br><span class="line">contact.phone = [<span class="string">"555-0100"</span>, <span class="string">"555-0120"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> memberfilter = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">memberfilter[<span class="number">0</span>] = <span class="string">"surname"</span>;</span><br><span class="line">memberfilter[<span class="number">1</span>] = <span class="string">"phone"</span>;</span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(contact, memberfilter, <span class="string">"\t"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(jsonText);</span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line"><span class="comment">// &#123; "surname": "Aaberg", "phone": [ "555-0100", "555-0120" ] &#125;</span></span><br></pre></td></tr></table></figure>
+<p>函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> continents = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">continents[<span class="number">0</span>] = <span class="string">"Europe"</span>;</span><br><span class="line">continents[<span class="number">1</span>] = <span class="string">"Asia"</span>;</span><br><span class="line">continents[<span class="number">2</span>] = <span class="string">"Australia"</span>;</span><br><span class="line">continents[<span class="number">3</span>] = <span class="string">"Antarctica"</span>;</span><br><span class="line">continents[<span class="number">4</span>] = <span class="string">"North America"</span>;</span><br><span class="line">continents[<span class="number">5</span>] = <span class="string">"South America"</span>;</span><br><span class="line">continents[<span class="number">6</span>] = <span class="string">"Africa"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> jsonText = <span class="built_in">JSON</span>.stringify(continents, replaceToUpper);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceToUpper</span>(<span class="params">key, value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value.toString().toUpperCase();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Output:</span></span><br><span class="line"><span class="comment">// "EUROPE,ASIA,AUSTRALIA,ANTARCTICA,NORTH AMERICA,SOUTH AMERICA,AFRICA"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>一个特殊用法把json里面的函数也格式化为json串</p>
+<p>  var ss = {</p>
+<pre><code>&quot;aa&quot;:&quot;bbb&quot;,
+&quot;bb&quot;:function(){console.log(&quot;3333&quot;)}
+</code></pre><p>  }</p>
+</li>
+</ul>
+<p>把上面对象字符串话其方法也一块传输过去;自然想到JSON.stringify;</p>
+<p>但stringify会过滤值为函数的key自然想到其第二个参数所以可以</p>
+<pre><code>JSON.stringify(ss,function(key,val){
+    console.log(key,&quot;===&quot;,val);
+    if(typeof val ===&quot;function&quot;){
+        return val.toString();
+    }else{
+        return val;
+    }
+});
+</code></pre><p>输出结果：</p>
+<pre><code> === Object {aa: &quot;bbb&quot;, bb: function}
+aa === bbb
+bb === function (){console.log(&quot;3333&quot;)}
+&quot;{&quot;aa&quot;:&quot;bbb&quot;,&quot;bb&quot;:&quot;function (){console.log(\&quot;3333\&quot;)}&quot;}&quot;
+</code></pre><p>看结果知道调用函数的次数为对象原属性值个数+1;</p>
+<p>对于数据传输之后如何解析可以用下面的</p>
+<pre><code>JSON.parse(text [, reviver])
+</code></pre><p>学习的主要是第二个参数</p>
+<p>官方例子</p>
+<pre><code>var jsontext = &apos;{ &quot;hiredate&quot;: &quot;2008-01-01T12:00:00Z&quot;, &quot;birthdate&quot;: &quot;2008-12-25T12:00:00Z&quot; }&apos;;
+var dates = JSON.parse(jsontext, dateReviver);
+document.write(dates.birthdate.toUTCString());
+
+function dateReviver(key, value) {
+    var a;
+    if (typeof value === &apos;string&apos;) {
+        a = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/.exec(value);
+        if (a) {
+            return new Date(Date.UTC(+a[1], +a[2] - 1, +a[3], +a[4],
+                            +a[5], +a[6]));
+        }
+    }
+    return value;
+};
+</code></pre><p>反转上面的值：</p>
+<pre><code>var dddd = JSON.parse(dd,function(key,val){
+    console.log(key,&quot;===&quot;,val);//也调用n+1次,最后key为“ ”；
+    if(val&amp;&amp;val.indexOf&amp;&amp;val.indexOf(&apos;function&apos;)&gt;=0){
+         return new Function(&quot;return &quot;+val)();
+    }else{
+        return val;
+    }
+
+});
+</code></pre><p>结果：</p>
+<pre><code>aa === bbb VM3687:3
+bb === function (){console.log(&quot;3333&quot;)} VM3687:3
+ === Object {aa: &quot;bbb&quot;, bb: function}
+
+Object {aa: &quot;bbb&quot;, bb: function}
+</code></pre><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://msdn.microsoft.com/zh-cn/library/ie/cc836459(v=vs.94).aspx" target="_blank" rel="external">http://msdn.microsoft.com/zh-cn/library/ie/cc836459(v=vs.94).aspx</a></p>
+
+  </section>
+  <footer class="post-footer">
+    <!--
+    <section class="author">
+      <h4></h4>
+      <p></p>
+    </section>
+    -->
+  </footer>
+</article>
+
+<nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/01/01/oneday/">
+        ← prev <!--One day-->
+    </a>
+    
+    <span class="page-number">•</span>
+    
+</nav>
+
+
+
+
+        </main>
+        <footer id="footer">
+            <section id="footer-message">&copy; 2016 G-talk. All rights reserved. Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. <a href="https://github.com/guolin/crisp-hexo-theme" target="_blank">crisp</a> theme by <a href="guolin.github.io" target="_blank">Guo Lin</a>.</section>
+        </footer>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-78893629-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
+
+
