@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link href="https://www.google.com.hk/images/branding/product/ico/googleg_lodp.ico" rel="shortcut icon">
+        <meta name="description" content="写写, 便于记忆">
+        <link rel="alternate" type="application/rss+xml" title="" href="/atom.xml">
+
+        <title>15方式给javascript增加 self-document | G-talk</title>
+        <meta name="description" content="{{meta_description}}">
+        <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/styles/crisp.css">
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?9d0651cbf7ae442986a1ee5a194b0b9b";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
+    </head>
+    
+		<body class="post-template">
+	
+
+        <header id="header">
+            <h1>
+            <a  href="/">
+            G-talk
+            </a>
+            </h1>
+            <h2><a href="/">写写, 便于记忆</a></h2>
+            <p></p>
+            <div id="follow-icons">
+	<a href="http://github.com/jguang"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="/atom.xml"><i class="fa fa-rss-square fa-2x"></i></a>
+</div>
+<h6><a href="/about">About</a></h6>
+<h6><a href="https://github.com/jguang/jguang.github.com/tree/master/note">Note</a></h6>
+<h6><a href="https://github.com/jguang/jguang.github.com/tree/master/examples">Examples</a></h6>
+        </header>
+
+        <main id="content">
+        
+
+<article class="post">
+
+  2016/06/22
+  
+
+  <h1 class="post-title">15方式给javascript增加 self-document</h1>
+  <section class="post-content article-entry">
+    <p>原文:<a href="https://www.sitepoint.com/self-documenting-javascript/" target="_blank" rel="external">https://www.sitepoint.com/self-documenting-javascript/</a></p>
+<p>作者: Jani Hartikainen</p>
+<blockquote>
+<p>Jani has built all kinds of JS apps for more than 15 years. At his blog, he helps JavaScript developers learn to eliminate bad code so they can focus on writing awesome apps and solve real problems.</p>
+</blockquote>
+<p>Jani有超过15年的经验为不同类型的JS应用;在他的博客上，他帮助js开发者学习怎么去避免糟糕的代码使其聚焦于开发出卓越的应用，并解决真实的问题。</p>
+<blockquote>
+<p>It’s an easy mistake to make: you change some code, and forget to remove or update the comment. A bad comment won’t break your code, but imagine what would happen when debugging. You read the comment. It says one thing, while the code does another. You’ll probably end up wasting time figuring it out, and in the worst case, it might even mislead you!</p>
+</blockquote>
+<p>这是一个容易犯的错误：你改变一些代码，而忘记删除或更新注释。错误注释不影响代码逻辑，但想一下，在调试的时候会发生什么。你读了注释。它说的是一个结果，而代码执行的是另一个结果。你可能最终会浪费时间想出来的，而在最坏的情况下可能会误导你！</p>
+<blockquote>
+<p>But writing code with zero comments isn’t an option. In my more than 15 years of programming experience, I’ve never seen a codebase where comments were completely unnecessary.</p>
+</blockquote>
+<p>但零注释写代码是不是一种选择。在我15年以上的编程经验，我从来没有见过一个代码库，注释是完全无用的。</p>
+<blockquote>
+<p>However, there are ways to reduce the need for comments. We can make use of certain coding techniques to clarify our code, simply by using the programming language’s features to our advantage.</p>
+</blockquote>
+<p>然而，有一些方法，以减少注释的必要性。 我们可以规范编码来阐明代码用处，只需使用的编程语言的特性给我们发挥优势。</p>
+<blockquote>
+<p>Not only does this help make our code easier to understand, it can also help improve the design of the program overall!</p>
+</blockquote>
+<p>不仅能使我们能容易理解代码，他也能帮助我们提高我们程序的总体设计。</p>
+<blockquote>
+<p>This type of code is often called self documenting. Let me show you how you can take this approach to coding right now. While the examples I’ll present here are in JavaScript, you can apply most of the techniques in other languages as well.</p>
+</blockquote>
+<p>这种目的规范代码通常被叫做(self-documenting)自带注释, 让我展示给你如何让你的代码接近这个目的，在这儿我将要用 js 去作为例子，你也能延伸到其他语言代码。</p>
+<h2 id="Overview-of-Techniques-技术概述"><a href="#Overview-of-Techniques-技术概述" class="headerlink" title="Overview of Techniques 技术概述"></a>Overview of Techniques 技术概述</h2><blockquote>
+<p>Some programmers include comments as part of self-documenting code. In this article, we’ll only focus on code. Comments are important, but they’re a large topic to be covered separately.</p>
+</blockquote>
+<p>一些程序包括代码注释部分也是 self-documeting 代码的一部分，在这个文档中我们聚焦于代码，注释也是很重要的它是个大的课题单独去研究。</p>
+<blockquote>
+<p>We can split the techniques for self-documenting code into three broad categories:</p>
+</blockquote>
+<p>我们把 self-documenting技术方案分成了三个主题，</p>
+<blockquote>
+<p>structural, where the structure of code or directories is used to clarify the purpose<br>  naming related, such as function or variable naming<br>  syntax related, where we make use of (or avoid using) features of the language to clarify code.</p>
+</blockquote>
+<p>结构: 清晰的代码或者目录的结构来达到目的<br>命名：函数或者变量命名<br>语法: 能使用或者避免使用一些语言特性来达到目的</p>
+<blockquote>
+<p>Many of these are simple on paper. The challenge comes from knowing when to use what technique. I’ll show you some practical examples as we tackle each one.</p>
+</blockquote>
+<p>纸上谈兵终觉浅，这最大的挑战是知道什么时候用什么技术，我将要展示些实际例子以便我们解决每个问题。</p>
+<h2 id="Structural-结构"><a href="#Structural-结构" class="headerlink" title="Structural 结构"></a>Structural 结构</h2><p>First, let’s look at the structural category. Structural changes refer to shifting code around for enhanced clarity.</p>
+<blockquote>
+<p>Move code into a function<br>  This is the same as the “extract function” refactoring — meaning that we take existing code and move it into a new function: we “extract” the code out into a new function.</p>
+</blockquote>
+<p>移动代码进入函数内</p>
+<p>这是相同的和『extract function』-意思是把已经存在的代码进入个新的函数内；</p>
+<p>试着去猜下面这一行是干什么的：</p>
+<pre><code>var width = (value - 0.5) * 16;
+</code></pre><blockquote>
+<p>Not very clear; a comment here could be quite useful. Or, we could extract a function to make it self documenting:</p>
+</blockquote>
+<p>不是非常清楚，一个注释在这儿应该或者『extract function』提取函数</p>
+<pre><code>var width = emToPixels(value);
+
+function emToPixels(ems) {
+    return (ems - 0.5) * 16;
+}
+</code></pre><blockquote>
+<p>The only change was I moved the calculation into a function. The function’s name is descriptive of what it does, so the code no longer needs clarification. As an additional benefit, we now have a useful helper function that you can use elsewhere, so this method also helps reduce duplication.</p>
+</blockquote>
+<p>我们仅有的改变是我把计算移动到了一个函数内，这函数的名字描述它是干什么的，由此代码也不需要怎么注释了。还有个额外好处，这函数可以再其他地方调用从而减少代码重复。</p>
+<p>….待续</p>
+
+  </section>
+  <footer class="post-footer">
+    <!--
+    <section class="author">
+      <h4></h4>
+      <p></p>
+    </section>
+    -->
+  </footer>
+</article>
+
+<nav class="pagination" role="pagination">
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/06/17/思考的要诀(3)/">
+        <!--思考的要诀——读书笔记--> next →
+    </a>
+    
+</nav>
+
+
+<!-- Begin Comments Code -->
+
+<div id="comments">
+  <div class="ds-thread" data-thread-key="2016/06/22/[翻译] JS-self-document/" data-title="15方式给javascript增加 self-document" data-url="2016/06/22/[翻译] JS-self-document/"></div>
+  <script type="text/javascript">
+var duoshuoQuery = {short_name:"guangtop"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+</div>
+
+<!-- End Comments Code -->
+
+
+
+        </main>
+        <footer id="footer">
+            <section id="footer-message">&copy; 2016 G-talk. All rights reserved. Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. <a href="https://github.com/guolin/crisp-hexo-theme" target="_blank">crisp</a> theme by <a href="guolin.github.io" target="_blank">Guo Lin</a>.</section>
+        </footer>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-78893629-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
+
+
