@@ -5,17 +5,17 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jguang.top/"/>
-  <updated>2016-06-22T16:00:06.000Z</updated>
+  <updated>2016-06-22T16:02:15.000Z</updated>
   <id>http://jguang.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>15方式给javascript代码变为self-documenting</title>
+    <title>15种方式给javascript代码变为self-documenting</title>
     <link href="http://jguang.top/2016/06/22/%5B%E7%BF%BB%E8%AF%91%5D%20JS-self-document/"/>
     <id>http://jguang.top/2016/06/22/[翻译] JS-self-document/</id>
     <published>2016-06-21T16:00:00.000Z</published>
-    <updated>2016-06-22T16:00:06.000Z</updated>
+    <updated>2016-06-22T16:02:15.000Z</updated>
     
     <content type="html">&lt;p&gt;原文:&lt;a href=&quot;https://www.sitepoint.com/self-documenting-javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.sitepoint.com/self-documenting-javascript/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最近再捡起来重新学习英文，看英文技术文档，看到这篇感觉比较容易试着翻译下。&lt;/p&gt;
