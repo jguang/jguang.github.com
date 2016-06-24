@@ -126,7 +126,46 @@ function emToPixels(ems) {
 <p>The only change was I moved the calculation into a function. The function’s name is descriptive of what it does, so the code no longer needs clarification. As an additional benefit, we now have a useful helper function that you can use elsewhere, so this method also helps reduce duplication.</p>
 </blockquote>
 <p>我们仅有的改变是我把计算移动到了一个函数内，这函数的名字描述它是干什么的，由此代码也不需要怎么注释了。还有个额外好处，这函数可以再其他地方调用从而减少代码重复。</p>
-<p>….待续</p>
+<h2 id="Replace-conditional-expression-with-function-用函数代替条件表达式"><a href="#Replace-conditional-expression-with-function-用函数代替条件表达式" class="headerlink" title="Replace conditional expression with function 用函数代替条件表达式"></a>Replace conditional expression with function 用函数代替条件表达式</h2><blockquote>
+<p>If clauses with multiple operands can often be hard to understand without a comment. We can apply a similar method as above to clarify them:</p>
+</blockquote>
+<p>如果没有注释，多个条件表达式是很难理解的我们可以用上面相似的方式使其看起来更明白</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(!el.offsetWidth || !el.offsetHeight) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面条件的目的是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isVisible(el) &#123;</span><br><span class="line">    return el.offsetWidth &amp;&amp; el.offsetHeight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(!isVisible(el)) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Again, we moved the code into a function and the code is immediately much easier to understand.<br>同样，我们把代码移动到函数中立即看起来更加容易理解了</p>
+</blockquote>
+<h2 id="Replace-expression-with-variable-用变量代替表达式"><a href="#Replace-expression-with-variable-用变量代替表达式" class="headerlink" title="Replace expression with variable 用变量代替表达式"></a>Replace expression with variable 用变量代替表达式</h2><blockquote>
+<p>Replacing something with a variable is similar to moving code into a function, but instead of a function, we simply use a variable.</p>
+</blockquote>
+<p>用变量代替一些语句是相似的同把代码移动到一个函数中，但是作为函数的替代品变量更简单。</p>
+<blockquote>
+<p>Let’s take a look at the example with if clauses again:</p>
+</blockquote>
+<p>再让我们看这个条件语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if(!el.offsetWidth || !el.offsetHeight) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Instead of extracting a function, we can also clarify this by introducing a variable:</p>
+</blockquote>
+<p>作为函数的替代品引人个变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var isVisible = el.offsetWidth &amp;&amp; el.offsetHeight;</span><br><span class="line">if(!isVisible) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>This can be a better choice than extracting a function — for example, when the logic you want to clarify is very specific to a certain algorithm used only in one place.</p>
+<p>The most common use for this method is mathematical expressions:</p>
+</blockquote>
+<p>这可能是更好的选择比引人函数，再一些仅仅使用一次的逻辑代码中；</p>
+<p>最常用的方法是数学表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return a * b + (c / d);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>We can clarify the above by splitting the calculation:</p>
+</blockquote>
+<p>我们可以拆分如下表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var multiplier = a * b;</span><br><span class="line">var divisor = c / d;</span><br><span class="line">return multiplier + divisor;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Because I’m terrible at math, imagine the above example has some meaningful algorithm. In any case, the point is that you can move complex expressions into variables that add meaning to otherwise hard-to-understand code.</p>
+</blockquote>
+<p>因为我讨厌数学，无法想象上面的例子是什么意思无论任何情况，这问题是你可以把复杂的表达式移动到一个变量意味着用其他方式理解代码。</p>
+<p>待续~~~</p>
 
   </section>
   <footer class="post-footer">
@@ -140,6 +179,10 @@ function emToPixels(ems) {
 </article>
 
 <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/06/24/关于产品的思考/">
+        ← prev <!--瞎逼逼下什么是好产品-->
+    </a>
     
     <span class="page-number">•</span>
     
