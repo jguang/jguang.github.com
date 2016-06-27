@@ -52,7 +52,7 @@
     <link href="http://jguang.top/2016/06/22/%5B%E7%BF%BB%E8%AF%91%5D%20JS-self-document/"/>
     <id>http://jguang.top/2016/06/22/[翻译] JS-self-document/</id>
     <published>2016-06-21T16:00:00.000Z</published>
-    <updated>2016-06-24T08:27:17.000Z</updated>
+    <updated>2016-06-27T02:31:54.000Z</updated>
     
     <content type="html">&lt;p&gt;原文:&lt;a href=&quot;https://www.sitepoint.com/self-documenting-javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.sitepoint.com/self-documenting-javascript/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最近再捡起来重新学习英文，看英文技术文档，看到这篇感觉比较容易试着翻译下。&lt;/p&gt;
@@ -157,6 +157,42 @@ function emToPixels(ems) {
 &lt;p&gt;Because I’m terrible at math, imagine the above example has some meaningful algorithm. In any case, the point is that you can move complex expressions into variables that add meaning to otherwise hard-to-understand code.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;因为我讨厌数学，无法想象上面的例子是什么意思无论任何情况，这问题是你可以把复杂的表达式移动到一个变量意味着用其他方式理解代码。&lt;/p&gt;
+&lt;h2 id=&quot;Class-and-module-interfaces类和模块接口&quot;&gt;&lt;a href=&quot;#Class-and-module-interfaces类和模块接口&quot; class=&quot;headerlink&quot; title=&quot;Class and module interfaces类和模块接口&quot;&gt;&lt;/a&gt;Class and module interfaces类和模块接口&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;The interface — that is, the public methods and properties — of a class or module can act as documentation on its usage.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;接口 - 即按照使用文档可以使用的类或者模块的公共方法和属性。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let’s look at an example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;让我们来看一个例子。&lt;/p&gt;
+&lt;p&gt;class Box {&lt;br&gt;    setState(state) {&lt;br&gt;        this.state = state;&lt;br&gt;    }&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;getState() {
+    return this.state;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This class could contain some other code in it as well. I purposely kept the example simple, to illustrate how the public interface is documentation&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个类另外还包含了一些其他代码。我特意保留了简单的例子，来说明公共接口就是文档&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you tell how this class should be used? Maybe with a little bit of work, but it isn’t very obvious.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你可以告诉这个类应该怎么使用？可能使用中有点思路，但不是非常肯定&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Both of the functions have reasonable names: what they do is clear from their name. But despite this, it’s not very clear how you should be using them. Most likely you would need to read more code or the documentation for the class to figure it out.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这两个函数又合适的名字，从他们的名字我们清楚的知道是干什么的但尽管这样，我们还不是真清楚应该如何使用他们，最有可能的，你将需要更多代码或弄明白的文档类。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What if we changed it to something like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果我们把它改成这样的：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Box&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    open() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &lt;span class=&quot;string&quot;&gt;&#39;open&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    close() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &lt;span class=&quot;string&quot;&gt;&#39;closed&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    isOpen() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state === &lt;span class=&quot;string&quot;&gt;&#39;open&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Much easier to see the usage, don’t you think? Notice that we only changed the public interface; the internal representation is still the same with the this.state property.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看使用容易得多，你不觉得吗？请注意，我们不仅改变了公共接口;内部表示仍是相同和this.state属性。&lt;/p&gt;
+&lt;p&gt;Now you can tell at a glance how the Box class is used. This shows that even though the first version had good names in the functions, the complete package was still confusing, and how, with simple decisions like this, you can have a very big impact. You always have to think of the big picture.&lt;/p&gt;
+&lt;p&gt;现在，你可以一目了然告诉Box类如何使用。这表明，即使第一个版本曾有表达功能好的名字，完整的方案仍然扑朔迷离，如果像如何像这样简单的决策，你可以有非常大的效果。你通常不得不要思考大的范围；&lt;/p&gt;
 &lt;p&gt;待续~~~&lt;/p&gt;
 </content>
     
