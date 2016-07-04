@@ -5,17 +5,94 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jguang.top/"/>
-  <updated>2016-06-27T01:38:31.000Z</updated>
+  <updated>2016-07-04T11:32:47.000Z</updated>
   <id>http://jguang.top/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOS初学记录-古老的OC</title>
+    <link href="http://jguang.top/2016/07/04/ios%E5%88%9D%E5%AD%A6%E8%AE%B0%E5%BD%95-%E5%8F%A4%E8%80%81%E7%9A%84%20OC/"/>
+    <id>http://jguang.top/2016/07/04/ios初学记录-古老的 OC/</id>
+    <published>2016-07-03T16:00:00.000Z</published>
+    <updated>2016-07-04T11:32:47.000Z</updated>
+    
+    <content type="html">&lt;p&gt;以前折腾过一阵 IOS给停止了，最近因要了解Rect-Native重新学习下起开发，希望这次能坚持&lt;/p&gt;
+&lt;h2 id=&quot;疑惑：认识&quot;&gt;&lt;a href=&quot;#疑惑：认识&quot; class=&quot;headerlink&quot; title=&quot;疑惑：认识&quot;&gt;&lt;/a&gt;疑惑：认识&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;消息： Objective-C 调用其类的方法称为起发送&lt;code&gt;消息&lt;/code&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;「@」符号： 起到编译标识的作用；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;『+』： 类的静态方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;『-』： 类的所属方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;『NSXXX』：是个曾经是NextStep 公司的时候开发的库，oc 编译是个平级函数资源，为防止重复采用前缀区别对待&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ORC: Automatic Reference Counting 就是代码中自动加入了retain/release &lt;a href=&quot;http://www.yifeiyang.net/development-of-the-iphone-simply-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.yifeiyang.net/development-of-the-iphone-simply-1/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;疑惑-类的属性的-self-省略&quot;&gt;&lt;a href=&quot;#疑惑-类的属性的-self-省略&quot; class=&quot;headerlink&quot; title=&quot;疑惑: 类的属性的 self 省略&quot;&gt;&lt;/a&gt;疑惑: 类的属性的 self 省略&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Person.m&lt;/code&gt;文件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;lt;Foundation/Foundation.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@interface Person : NSObject &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int width;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int height;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@property int age;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Person.h&lt;/code&gt; w文件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;quot;Person.h&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@implementation Person &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int baidu;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (Person*)init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    width = 100;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    _age = 10;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self-&amp;gt;baidu = 100000;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self-&amp;gt;_age = 100;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    self.age = 10000;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return self;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (NSString*)description&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    NSLog(@&amp;quot;%d,%d, %d&amp;quot;, width, height, self-&amp;gt;baidu);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    return @&amp;quot;aaaaaaaaaa&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)add&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    NSLog(@&amp;quot;this age is %d&amp;quot;, self.age);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;@property&lt;/code&gt; 是声明表明了 set 和 get 方法，可以采用&lt;code&gt;.&lt;/code&gt;来操作，其属性命名为&lt;code&gt;_名字&lt;/code&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;方法中类属性可以省略 self, 属性直接声明是在其{}号中&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;疑惑：类中的方法&quot;&gt;&lt;a href=&quot;#疑惑：类中的方法&quot; class=&quot;headerlink&quot; title=&quot;疑惑：类中的方法&quot;&gt;&lt;/a&gt;疑惑：类中的方法&lt;/h2&gt;&lt;p&gt;定义&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-/+ (返回类型) 方法名: (参数1类型) 形参1  参数2描述: (参数2类型) 形参2 参数3描述: (参数3类型) 形参3 .......&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;调用&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[object 方法名:参数1 参数描述2:参数2 ...];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;OC 中 方法名可以作为参数1的描述，方法的所有描述构成一个完整的方法，只有描述不同其方法可认为是不同的；&lt;/p&gt;
+&lt;p&gt;如下面是错误的，方法重复&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (NSString) initWithAdd:(int) arg1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (NSString) initWithAdd: (float) arg2;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其下面是 ok 的：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;    - (NSString) initWithAdd:(int) arg1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - (NSString) initWithAdd:(int) arg1 second:(float) arg2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;`&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;IOS生命周期&quot;&gt;&lt;a href=&quot;#IOS生命周期&quot; class=&quot;headerlink&quot; title=&quot;IOS生命周期&quot;&gt;&lt;/a&gt;IOS生命周期&lt;/h2&gt;&lt;p&gt;IOS 运行是代理、委托或者过程，中间经过层层事件传递, 继承与UIApplicationDelegate接口，生命函数大概如下&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;no runting -&amp;gt; inactive -&amp;gt; active&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;application:didFinishLaunchingWithOptions -&amp;gt; applicationDidBecomeActive&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;切换到其他app, active -&amp;gt; inactive -&amp;gt;  background&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;applicationDidBecomeActive -&amp;gt; applicationWillResignActive -&amp;gt;applicationDidEnterBackground&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从其他 app 切换回来, background -&amp;gt; inactive -&amp;gt; active&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;applicationDidEnterBackground -&amp;gt; applicationWillEnterForeground -&amp;gt;  applicationDidBecomeActive&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;锁屏 active -&amp;gt; inactive -&amp;gt; background&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;applicationDidBecomeActive -&amp;gt; applicationWillResignActive -&amp;gt; applicationDidEnterBackground&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;异常终止 end&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;applicationWillTerminate&lt;/p&gt;
+&lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.devtalking.com/articles/you-should-to-know-property/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.devtalking.com/articles/you-should-to-know-property/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;《Objective 编程》&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前折腾过一阵 IOS给停止了，最近因要了解Rect-Native重新学习下起开发，希望这次能坚持&lt;/p&gt;
+&lt;h2 id=&quot;疑惑：认识&quot;&gt;&lt;a href=&quot;#疑惑：认识&quot; class=&quot;headerlink&quot; title=&quot;疑惑：认识&quot;&gt;&lt;/a&gt;疑惑：认识&lt;/h2&gt;&lt;ul&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://jguang.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>瞎逼逼下什么是好产品</title>
     <link href="http://jguang.top/2016/06/24/%E5%85%B3%E4%BA%8E%E4%BA%A7%E5%93%81%E7%9A%84%E6%80%9D%E8%80%83/"/>
     <id>http://jguang.top/2016/06/24/关于产品的思考/</id>
     <published>2016-06-23T16:00:00.000Z</published>
-    <updated>2016-06-27T01:38:31.000Z</updated>
+    <updated>2016-06-27T09:28:37.000Z</updated>
     
     <content type="html">&lt;p&gt;对，就是瞎逼逼下, 我又不懂产品。&lt;/p&gt;
 &lt;p&gt;一直对『这是一个没有成果就没有正面评价的严峻时代』这句话记忆深刻，特别是狼厂这句话是最好的证明。&lt;/p&gt;
@@ -30,7 +107,7 @@
 &lt;li&gt;&lt;p&gt;在现有规模的产品上去做类似产品不可能再又太大价值，必须继续发挥其他创造力，解决现有产品的其他矛盾让后用规模形成大的价值；&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;结束，不逼逼了~~&lt;/p&gt;
+&lt;p&gt;…..，算了， 不逼逼了~~&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -52,7 +129,7 @@
     <link href="http://jguang.top/2016/06/22/%5B%E7%BF%BB%E8%AF%91%5D%20JS-self-document/"/>
     <id>http://jguang.top/2016/06/22/[翻译] JS-self-document/</id>
     <published>2016-06-21T16:00:00.000Z</published>
-    <updated>2016-06-27T02:31:54.000Z</updated>
+    <updated>2016-07-04T07:00:56.000Z</updated>
     
     <content type="html">&lt;p&gt;原文:&lt;a href=&quot;https://www.sitepoint.com/self-documenting-javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.sitepoint.com/self-documenting-javascript/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;最近再捡起来重新学习英文，看英文技术文档，看到这篇感觉比较容易试着翻译下。&lt;/p&gt;
@@ -136,23 +213,23 @@ function emToPixels(ems) {
 &lt;p&gt;Let’s take a look at the example with if clauses again:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;再让我们看这个条件语句&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;if(!el.offsetWidth || !el.offsetHeight) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!el.offsetWidth || !el.offsetHeight) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Instead of extracting a function, we can also clarify this by introducing a variable:&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;作为函数的替代品引人个变量&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var isVisible = el.offsetWidth &amp;amp;&amp;amp; el.offsetHeight;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if(!isVisible) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;作为函数的替代品引人个变量&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; isVisible = el.offsetWidth &amp;amp;&amp;amp; el.offsetHeight;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!isVisible) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This can be a better choice than extracting a function — for example, when the logic you want to clarify is very specific to a certain algorithm used only in one place.&lt;/p&gt;
 &lt;p&gt;The most common use for this method is mathematical expressions:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;这可能是更好的选择比引人函数，再一些仅仅使用一次的逻辑代码中；&lt;/p&gt;
 &lt;p&gt;最常用的方法是数学表达式&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;return a * b + (c / d);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a * b + (c / d);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;We can clarify the above by splitting the calculation:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们可以拆分如下表达式：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var multiplier = a * b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var divisor = c / d;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;return multiplier + divisor;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; multiplier = a * b;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; divisor = c / d;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; multiplier + divisor;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Because I’m terrible at math, imagine the above example has some meaningful algorithm. In any case, the point is that you can move complex expressions into variables that add meaning to otherwise hard-to-understand code.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -165,11 +242,7 @@ function emToPixels(ems) {
 &lt;p&gt;Let’s look at an example:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;让我们来看一个例子。&lt;/p&gt;
-&lt;p&gt;class Box {&lt;br&gt;    setState(state) {&lt;br&gt;        this.state = state;&lt;br&gt;    }&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;getState() {
-    return this.state;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;}&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Box&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    setState(state) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = state;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    getState() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This class could contain some other code in it as well. I purposely kept the example simple, to illustrate how the public interface is documentation&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -193,6 +266,76 @@ function emToPixels(ems) {
 &lt;p&gt;看使用容易得多，你不觉得吗？请注意，我们不仅改变了公共接口;内部表示仍是相同和this.state属性。&lt;/p&gt;
 &lt;p&gt;Now you can tell at a glance how the Box class is used. This shows that even though the first version had good names in the functions, the complete package was still confusing, and how, with simple decisions like this, you can have a very big impact. You always have to think of the big picture.&lt;/p&gt;
 &lt;p&gt;现在，你可以一目了然告诉Box类如何使用。这表明，即使第一个版本曾有表达功能好的名字，完整的方案仍然扑朔迷离，如果像如何像这样简单的决策，你可以有非常大的效果。你通常不得不要思考大的范围；&lt;/p&gt;
+&lt;p&gt;##Code grouping 代码分组&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Grouping different parts of code can also act as a form of documentation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;代码分组也可以作为文档的一部分&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For example, you should always aim to declare your variables as close to where they are being used as possible, and try to group variable uses together.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例如，应该尽量把变量声明接近使用，试着按照使用去分组变量；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This can be used to indicate a relationship between the different parts of the code, so that anyone changing it in the future has an easier time finding which parts they may also need to touch.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就暗示了代码不同部分直接的关系，将来改变的时候可以和容易的找到&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Consider the following example:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;思考下面的例子&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var foo = 1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;blah()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xyz();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar(foo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;baz(1337);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;quux(foo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Can you see at a glance how many times foo was used? Compare it to this:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var foo = 1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;bar(foo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;quux(foo);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;blah()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;xyz();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;baz(1337);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;With all the uses of foo grouped together, we can easily see which parts of the code depend on it.&lt;br&gt;用&lt;code&gt;foo&lt;/code&gt;的分到一个单元内，我们能很容易的看到那个代码依赖于它&lt;/p&gt;
+&lt;h2 id=&quot;Use-pure-functions-使用纯函数&quot;&gt;&lt;a href=&quot;#Use-pure-functions-使用纯函数&quot; class=&quot;headerlink&quot; title=&quot;Use pure functions 使用纯函数&quot;&gt;&lt;/a&gt;Use pure functions 使用纯函数&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Pure functions are much easier to understand than functions that rely on state.&lt;br&gt;纯函数更容易理解比依赖性函数&lt;/p&gt;
+&lt;p&gt;What is a pure function? When calling a function with the same parameters, if it always produces the same output, it’s most likely a so-called “pure” function. This means the function should not have any side effects or rely on state — such as time, object properties, Ajax, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;什么是纯函数？ 它类似于输出类似的参数，通常又相同的输出的『pure』函数。也就意味着此函数不能又其他反馈或者依赖一些状态日时间，对象属性或者ajax等等；&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These types of functions are easier to understand, as any values affecting their output are passed in explicitly. You won’t have to dig around to figure out where something comes from, or what affects the result, as it’s all in plain sight.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Another reason these types of functions make for more self-documenting code is you can trust their output. No matter what, the function will always return output only based on what parameters you give it. It also won’t affect anything external, so you can trust it won’t cause an unexpected side effect.&lt;/p&gt;
+&lt;p&gt;A good example of where this goes wrong is document.write(). Experienced JS developers know you shouldn’t use it, but many beginners stumble with it. Sometimes it works well — but other times, in certain circumstances, it can wipe the whole page clean. Talk about a side effect!&lt;/p&gt;
+&lt;p&gt;For a better overview of what a pure function is, see the article Functional Programming: Pure Functions.&lt;/p&gt;
+&lt;p&gt;Directory and file structure&lt;br&gt;When naming files or directories, follow the same naming convention as used in the project. If there’s no clear convention in the project, follow the standard for your language of choice.&lt;/p&gt;
+&lt;p&gt;For example, if you’re adding new UI-related code, find where similar functionality is in the project. If UI-related code is placed in src/ui/, you should do the same.&lt;/p&gt;
+&lt;p&gt;This makes it easier to find the code and shows its purpose, based on what you already know about the other pieces of code in the project. All UI code is in the same place, after all, so it must be UI related.&lt;/p&gt;
+&lt;p&gt;Naming&lt;br&gt;There’s a popular quote about the two hard things in computer science:&lt;/p&gt;
+&lt;p&gt;There are only two hard things in Computer Science: cache invalidation and naming things. — Phil Karlton&lt;br&gt;So let’s take a look at how we can use naming things to make our code self documenting.&lt;/p&gt;
+&lt;p&gt;Rename function&lt;br&gt;Function naming is often not too difficult, but there’s some simple rules that you can follow:&lt;/p&gt;
+&lt;p&gt;Avoid using vague words like “handle” or “manage”: handleLinks(), manageObjects(). What do either of these do?&lt;br&gt;Use active verbs: cutGrass(), sendFile() — functions that actively perform something.&lt;br&gt;Indicate return value: getMagicBullet(), readFile(). This is not something you can always do, but it’s helpful where it makes sense.&lt;br&gt;Languages with strong typing can use type signatures to help indicate return values as well.&lt;br&gt;Rename variable&lt;br&gt;With variables, here are two good rules of thumb:&lt;/p&gt;
+&lt;p&gt;Indicate units: if you have numeric parameters, you can include the expected unit. For example, widthPx instead of width to indicate the value is in pixels instead of some other unit.&lt;br&gt;Don’t use shortcuts: a or b are not acceptable names, except for counters in loops.&lt;br&gt;Follow established naming conventions&lt;br&gt;Try to follow the same naming conventions in your code. For example, if you have an object of a specific type, call it the same name:&lt;/p&gt;
+&lt;p&gt;var element = getElement();&lt;br&gt;Don’t suddenly decide to call it a node:&lt;/p&gt;
+&lt;p&gt;var node = getElement();&lt;br&gt;If you follow the same conventions as elsewhere in the codebase, anyone reading it can make safe assumptions about the meanings of things based on what it means elsewhere.&lt;/p&gt;
+&lt;p&gt;Use meaningful errors&lt;br&gt;Undefined is not an object!&lt;/p&gt;
+&lt;p&gt;Everyone’s favorite. Let’s not follow JavaScript’s example, and let’s make sure any errors our code throws have a meaningful message in them.&lt;/p&gt;
+&lt;p&gt;What makes an error message meaningful?&lt;/p&gt;
+&lt;p&gt;it should describe what the problem was&lt;br&gt;if possible, it should include any variable values or other data which caused the error&lt;br&gt;key point: the error should help us find out what went wrong — therefore acting as documentation on how the function should work.&lt;br&gt;Syntax&lt;br&gt;Syntax-related methods for self-documenting code can be a little bit more language specific. For example, Ruby and Perl allow you to do all kinds of strange syntax tricks, which, in general, should be avoided.&lt;/p&gt;
+&lt;p&gt;Let’s take a look at a few that happen with JavaScript.&lt;/p&gt;
+&lt;p&gt;Don’t use syntax tricks&lt;br&gt;Don’t use strange tricks. Here’s a good way to confuse people:&lt;/p&gt;
+&lt;p&gt;imTricky &amp;amp;&amp;amp; doMagic();&lt;br&gt;It’s equivalent to this much more sane looking code:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;if(imTricky) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    doMagic();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Always prefer the latter form. Syntax tricks are not going to do anyone any favors.&lt;/p&gt;
+&lt;p&gt;Use named constants, avoid magic values&lt;br&gt;If you have special values in your code — such as numbers or string values — consider using a constant instead. Even if it seems clear now, more often than not, when coming back to it in a month or two, nobody will have any idea why that particular number was put there.&lt;/p&gt;
+&lt;p&gt;const MEANING_OF_LIFE = 42;&lt;br&gt;(If you’re not using ES6, you can use a var and it’ll work equally well.)&lt;/p&gt;
+&lt;p&gt;Avoid boolean flags&lt;br&gt;Boolean flags can make for hard-to-understand code. Consider this:&lt;/p&gt;
+&lt;p&gt;myThing.setData({ x: 1 }, true);&lt;br&gt;What is the meaning of true? You have absolutely no idea, unless you dig into the source for setData() and find out.&lt;/p&gt;
+&lt;p&gt;Instead, you can add another function, or rename an existing function:&lt;/p&gt;
+&lt;p&gt;myThing.mergeData({ x: 1 });&lt;br&gt;Now you can immediately tell what’s going on.&lt;/p&gt;
+&lt;p&gt;Use language features to your advantage&lt;br&gt;We can even use some features of our chosen language to better communicate the intention behind some code.&lt;/p&gt;
+&lt;p&gt;A good example of this in JavaScript are the array iteration methods:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var ids = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;for(var i = 0; i &amp;lt; things.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ids.push(things[i].id);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;The above code collects a list of IDs into a new array. However, in order to know that, we need to read the whole body of the loop. Compare it with using map():&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var ids = things.map(function(thing) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  return thing.id;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;In this case, we immediately know that this produces a new array of something, because that’s the purpose of map(). This can be beneficial especially if you have more complicated looping logic. There’s a list of other iteration functions on MDN.&lt;/p&gt;
+&lt;p&gt;Another example with JavaScript is the const keyword.&lt;/p&gt;
+&lt;p&gt;Often, you declare variables where the value is supposed to never change. A very common example is when loading modules with CommonJS:&lt;/p&gt;
+&lt;p&gt;var async = require(‘async’);&lt;br&gt;We can make the intention of never changing this even more clear:&lt;/p&gt;
+&lt;p&gt;const async = require(‘async’);&lt;br&gt;As an added benefit, if someone ever accidentally tries to change this, we’ll now get an error.&lt;/p&gt;
+&lt;p&gt;Anti-patterns&lt;br&gt;With all these methods at your disposal, you can do a lot of good. However, there are some things you should be careful about …&lt;/p&gt;
+&lt;p&gt;Extracting for the sake of having short functions&lt;br&gt;Some people advocate the use of tiny tiny functions, and if you extract everything out, that’s what you can get. However, this can detrimentally affect how easy the code is to understand.&lt;/p&gt;
+&lt;p&gt;For example, imagine you’re debugging some code. You look in function a(). Then, you find it uses b(), which then uses c(). And so on.&lt;/p&gt;
+&lt;p&gt;While short functions can be great and easy to understand, if you’re only using the function in a single place, consider using the “replace expression with variable” method instead.&lt;/p&gt;
+&lt;p&gt;Don’t force things&lt;br&gt;As usual, there’s no absolute right way to do this. Therefore, if something doesn’t seem like it’s a good idea, don’t try to force it.&lt;/p&gt;
+&lt;p&gt;Conclusion&lt;br&gt;Making your code self documenting goes a long way to improving the maintainability of your code. Every comment is additional cruft that has to be maintained, so eliminating comments where possible is a good thing.&lt;/p&gt;
+&lt;p&gt;However, self-documenting code doesn’t replace documentation or comments. For example, code is limited in expressing intent, so you need to have good comments as well. API documentation is also very important for libraries, as having to read the code is not feasible unless your library is very small.&lt;/p&gt;
 &lt;p&gt;待续~~~&lt;/p&gt;
 </content>
     

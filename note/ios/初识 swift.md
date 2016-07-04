@@ -44,3 +44,18 @@ var sixDoubles = threeDoubles + anotherThreeDoubles // 数组可以相加使其�
 var shoppingList: [String] = ["Eggs", "Milk"]
 
 ```
+
+## 结构体
+
+```
+struct Aaaa{
+    var width:Int;
+    var height:Int;
+}
+
+```
+
+- 如果创建了一个结构体的实例并将其赋值给一个常量，则无法修改该实例的任何属性，即使有属性被声明为变量也不行：
+
+- 属于引用类型的类（class）则不一样。把一个引用类型的实例赋给一个常量后，仍然可以修改该实例的变量属性。
+

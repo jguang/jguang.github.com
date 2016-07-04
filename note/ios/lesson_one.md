@@ -2,12 +2,18 @@
 
 ##类的引用
 
-- include和import的区别，import是include 的升级版，避免头文件互相引用；可参考http://www.saitjr.com/ios/oc-include-import-class-difference.html; 关于 C 的编译原理可参考：http://blog.csdn.net/koudaidai/article/details/8092647 http://mooc.guokr.com/note/13202/ http://www.ruanyifeng.com/blog/2014/11/compiler.html
+- include和import的区别，import是include 的升级版，避免头文件互相引用；可参考
+http://www.saitjr.com/ios/oc-include-import-class-difference.html;
+关于 C 的编译原理可参考：
+http://blog.csdn.net/koudaidai/article/details/8092647
+http://mooc.guokr.com/note/13202/
+http://www.ruanyifeng.com/blog/2014/11/compiler.html
+http://www.iosxxoo.com/2016/06/21/2016-06-21/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
 
-- import中国双引号用来引用本地文件，尖括号<>用来引用库文件
+- import中双引号用来引用本地文件，尖括号<>用来引用库文件
 
 
-##中括号和点.操作符
+## 中括号和点.操作符
 
 ```
     @interface Person:NSObject
@@ -36,8 +42,6 @@ OC后来为了对属性的 get set 简单，只要@propety声明的变量自动�
 
 - http://www.jianshu.com/p/a212496277f0
 - http://www.cocoachina.com/ios/20150727/12772.html
-
-
 
 
 
