@@ -93,7 +93,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (NSString) initWithAdd:(int) arg1;</span><br><span class="line">- (NSString) initWithAdd: (float) arg2;</span><br></pre></td></tr></table></figure>
 <p>其下面是 ok 的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">    - (NSString) initWithAdd:(int) arg1;</span><br><span class="line">    - (NSString) initWithAdd:(int) arg1 second:(float) arg2;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<h2 id="疑惑：接口、Block、Category"><a href="#疑惑：接口、Block、Category" class="headerlink" title="疑惑：接口、Block、Category"></a>疑惑：接口、Block、Category</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>oc没有严格一一的接口定义，采用@protocol 去约束类的方法；@optional不强制实现，@required表必须实现, NS 库中多数类为接口如 NSObject, UIApplicationDelegate</p>
+<h2 id="疑惑：接口、Block、Category"><a href="#疑惑：接口、Block、Category" class="headerlink" title="疑惑：接口、Block、Category"></a>疑惑：接口、Block、Category</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>oc没有严格的接口定义，采用@protocol 去约束类的方法；@optional不强制实现，@required表必须实现, NS 库中多数类为接口如 NSObject, UIApplicationDelegate</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@protocol AnimalDelegate &lt;NSObject&gt; //AnimalDelegate扩展语 NSObject协议</span><br><span class="line"></span><br><span class="line">@required //必须实现的方法</span><br><span class="line">-(void)eat;</span><br><span class="line"></span><br><span class="line">@optional //可选实现的方法</span><br><span class="line">-(void)run;</span><br><span class="line">-(void)say;</span><br><span class="line">-(void)sleep;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><p>可以作为匿名函数来理解, 作为类的属性定义</p>
 <p>定义</p>
@@ -102,25 +102,25 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KCButton *button=[[KCButton alloc]init];</span><br><span class="line">button.onClick=^(KCButton *btn)&#123;</span><br><span class="line">    NSLog(@&quot;Invoke onClick method.The button is:%@.&quot;,btn);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Category分类"><a href="#Category分类" class="headerlink" title="Category分类"></a>Category分类</h3><p>如果对已有类进行扩展可采用继承或者此分类的形式, 如扩展 NSString 类<br>参考：<a href="http://blog.csdn.net/yhawaii/article/details/6992094" target="_blank" rel="external">http://blog.csdn.net/yhawaii/article/details/6992094</a></p>
 <h2 id="IOS生命周期"><a href="#IOS生命周期" class="headerlink" title="IOS生命周期"></a>IOS生命周期</h2><p>IOS 运行是代理、委托或者过程，中间经过层层事件传递, 继承与UIApplicationDelegate接口，生命函数大概如下</p>
-<ol>
+<ul>
 <li>no runting -&gt; inactive -&gt; active</li>
-</ol>
+</ul>
 <p>application:didFinishLaunchingWithOptions -&gt; applicationDidBecomeActive</p>
-<ol>
+<ul>
 <li>切换到其他app, active -&gt; inactive -&gt;  background</li>
-</ol>
+</ul>
 <p>applicationDidBecomeActive -&gt; applicationWillResignActive -&gt;applicationDidEnterBackground</p>
-<ol>
+<ul>
 <li>从其他 app 切换回来, background -&gt; inactive -&gt; active</li>
-</ol>
+</ul>
 <p>applicationDidEnterBackground -&gt; applicationWillEnterForeground -&gt;  applicationDidBecomeActive</p>
-<ol>
+<ul>
 <li>锁屏 active -&gt; inactive -&gt; background</li>
-</ol>
+</ul>
 <p>applicationDidBecomeActive -&gt; applicationWillResignActive -&gt; applicationDidEnterBackground</p>
-<ol>
+<ul>
 <li>异常终止 end</li>
-</ol>
+</ul>
 <p>applicationWillTerminate</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://www.devtalking.com/articles/you-should-to-know-property/" target="_blank" rel="external">http://www.devtalking.com/articles/you-should-to-know-property/</a></li>
