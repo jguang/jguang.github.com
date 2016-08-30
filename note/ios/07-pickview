@@ -1,0 +1,53 @@
+# picker 组件
+
+## UIDatePicker组件
+
+### NSDate
+
+Foundation框架下的日期时间数据操作类；
+```
+    NSDate *date1=[NSDate date];//获得当前日期
+    NSLog(@"%@",date1); //结果：2014-07-16 07:25:28 +0000
+
+    NSDate *date2=[NSDate dateWithTimeIntervalSinceNow:100];//在当前日期的基础上加上100秒，注意在ObjC中多数时间单位都是秒
+    NSLog(@"%@",date2); //结果：2014-07-16 07:27:08 +0000
+
+    NSDate *date3=[NSDate distantFuture];//随机获取一个将来的日期
+    NSLog(@"%@",date3); //结果：4001-01-01 00:00:00 +0000
+
+    NSTimeInterval time=[date2 timeIntervalSinceDate:date1];//日期之差,返回单位为秒
+    NSLog(@"%f",time); //结果：100.008833
+
+    NSDate *date5=[date1 earlierDate:date3];//返回比较早的日期
+    NSLog(@"%@",date5); //结果：2014-07-16 07:25:28 +0000
+
+    //日期格式化
+    NSDateFormatter *formater1=[[NSDateFormatter alloc]init];
+    formater1.dateFormat=@"yy-MM-dd HH:mm:ss";
+    NSString *datestr1=[formater1 stringFromDate:date1];
+    NSLog(@"%@",datestr1); //结果：14-07-16 15:25:28
+    //字符串转化为日期
+    NSDate *date6=[formater1 dateFromString:@"14-02-14 11:07:16"];
+    NSLog(@"%@",date6); //结果：2014-02-14 03:07:16 +0000
+
+    NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+    long long int date = (long long int)time;
+    NSLog(@”date\n%d”, date); //1295322949
+
+    NSDate *dd = [NSDate dateWithTimeIntervalSince1970:date];
+    NSLog(@”d:%@”,dd); //2011-01-18 03:55:49 +0000
+```
+
+UIDatePicker组件中设置日期就为
+
+````
+    NSDate *now = [NSDate date];
+    [self.datePicker setDate:now animated:NO];
+```
+获取日期为:
+
+```
+    self.datePicker.date;
+```
+
+

@@ -113,6 +113,8 @@ xxx.m
 
 自动释放内存[http://justcoding.iteye.com/blog/1391548]
 
+property属性介绍[http://www.lvtao.net/ios/504.html]
+
 
 ##参考
 - [iOS学习笔记]http://blog.csdn.net/xyz_lmn/article/details/8907502
