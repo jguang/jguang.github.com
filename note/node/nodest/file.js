@@ -5,6 +5,7 @@
 
 var domain = require('domain');
 var fs = require('fs');
+var path = require('path');
 require('url')
 
 // fs.appendFile('message.txt', 'data to append', (err) => {
@@ -14,6 +15,11 @@ require('url')
 
 console.log(fs.statSync('message.txt'));
 console.log(fs.createReadStream('message.txt'));
+
+var rS = fs.createReadStream('message.txt');
+var wS = fs.createWriteStream('message-copy.txt');
+
+rS.pipe(wS);
 
 
 fs.open('message.txt', 'a', function(err,fd){
@@ -33,7 +39,16 @@ fs.open('message.txt', 'a', function(err,fd){
     //})
 });
 
-console.log(fs.readdirSync('./'))
+fs.readdir('./', (erro, files) => {
+    "use strict";
+    files.forEach((file)=>{
+        let filePath = path.resolve(__dirname, file);
+        console.log(filePath);
+        fs.stat(filePath, (erro, stats)=>{
+            console.log(stats.isDirectory());
+        })
+    });
+});
 
 //fs.watchFile('message.txt', (curr, prev) => {
 //    console.log(`the current mtime is: ${curr.mtime}`);
@@ -67,7 +82,7 @@ console.log(fs.readdirSync('./'))
 
 //fs.mkdirSync('ab/bb');
 
-console.log(fs.existsSync('aa/bb'));
+console.log("existsSync", fs.existsSync('aa/bb'));
 
 var fs = require('fs');
 
@@ -76,12 +91,13 @@ function readLines(input, func) {
 
     input.on('data', function(data) {
         remaining += data;
+        console.log(data.toString(), '=======');
         var index = remaining.indexOf('\n');
         var last  = 0;
         while (index > -1) {
             var line = remaining.substring(last, index);
             last = index + 1;
-            func(line);
+            func(line, index);
             index = remaining.indexOf('\n', last);
         }
 
@@ -94,9 +110,9 @@ function readLines(input, func) {
         }
     });
 }
-
-function func(data) {
-    console.log('Line: ' + data);
+var line = 0;
+function func(data, index) {
+    console.log('Line ' + line++ + ':' + data);
 }
 
 var input = fs.createReadStream('../file.md');

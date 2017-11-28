@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://wepayui.github.io/list.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="keywords" content="WePayUI,WeUI,微信支付,微信支付素材,规范">
+<meta name="description" content="WePayUI 是基于 WeUI 拓展的场景组件，包含常用组件及H5模板，方便服务商、商家等快速使用微信支付官方品牌规范，提升开发效率。">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+
+<link rel="stylesheet" href="./WePayUI_files/wepayui.min.css">
+<link rel="stylesheet" href="./WePayUI_files/index.min.css">
+
+</head>
+<!-- 
+	通用说明： 
+	1.模块的隐藏添加class:hide;
+	2.body标签默认绑定ontouchstart事件，激活所有按钮的:active效果
+-->
+<body ontouchstart="">
+<article class="page-wrapper" id="wepayWrapper">
+    <!--[[头部导航栏开始 -->
+    <header id="header" class="clearfix header">
+    <div class="nav-logo">
+        <a href="https://wepayui.github.io/index.html" title="WePayUI" id="home"><img alt="WePayUI" src="./WePayUI_files/wepayui.png" width="159" class="home"></a>
+    </div>
+    <a href="javascript:;" class="nav-icon" id="ico_nav">
+        <i class="nav-phone-icon"></i>
+    </a>
+</header>
+    <!--[[头部导航栏结束 -->
+    <div class="main-wrapper">
+        <div class="wepay-row">
+            <!--[[左侧边栏开始 -->
+            <div class="wepay-menu-wrap wepay-col-sm-24 wepay-col-md-6 wepay-col-lg-4" id="nav" style="display: none;">
+    <ul class="wepay-menu wepay-menu-inline wepayside-container wepay-menu-root" tabindex="0">
+        <li class="wepay-menu-item" id="nav_index">
+            <a href="https://wepayui.github.io/index.html">起步</a>
+        </li>
+        <li class="wepay-menu-submenu wepay-menu-submenu-open">
+            <div class="wepay-menu-submenu-title">
+                <h4>组件</h4>
+            </div>
+            <ul class="wepay-menu wepay-menu-inline wepay-menu-sub" role="menu">
+                <li class="wepay-menu-item-group">
+                    <div class="wepay-menu-item-group-title">Basic</div>
+                    <ul class="wepay-menu-item-group-list">
+                        <li class="wepay-menu-item" id="nav_font">
+                            <a href="https://wepayui.github.io/font.html">           
+                                <span>Font</span>
+                                <span class="chinese">字体规范</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_logo">
+                            <a href="https://wepayui.github.io/logo.html">
+                                <span>Logo</span>
+                                <span class="chinese">微信支付商标</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_icon">
+                            <a href="https://wepayui.github.io/icon.html">
+                                <span>Icon</span>
+                                <span class="chinese">图标</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_button">
+                            <a href="https://wepayui.github.io/button.html">
+                                <span>Button</span>
+                                <span class="chinese">按钮</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item wepay-menu-item-selected" id="nav_list">
+                            <a href="https://wepayui.github.io/list.html">
+                                <span>List</span>
+                                <span class="chinese">列表</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_input">
+                            <a href="https://wepayui.github.io/input.html">
+                                <span>Input</span>
+                                <span class="chinese">表单</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_dialog">
+                            <a href="https://wepayui.github.io/dialog.html">
+                                <span>Dialog</span>
+                                <span class="chinese">对话框</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="wepay-menu-submenu wepay-menu-submenu-open">
+            <div class="wepay-menu-submenu-title">
+                <h4>场景</h4>
+            </div>
+            <ul class="wepay-menu wepay-menu-inline wepay-menu-sub" role="menu">
+                <li class=" wepay-menu-item-group">
+                    <div class="wepay-menu-item-group-title">收付款</div>
+                    <ul class="wepay-menu-item-group-list">
+                        <li class="wepay-menu-item" id="nav_pay_scan_code">
+                            <a href="https://wepayui.github.io/pay_scan_code.html">
+                                <span>扫码支付</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_pay_select_money">
+                            <a href="https://wepayui.github.io/pay_select_money.html">
+                                <span>选择金额付款</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_pay_input_money">
+                            <a href="https://wepayui.github.io/pay_input_money.html">
+                                <span>输入金额付款</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_pay_detail">
+                            <a href="https://wepayui.github.io/pay_detail.html">
+                                <span>收付款详情</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_pay_record">
+                            <a href="https://wepayui.github.io/pay_record.html">
+                                <span>收付款记录</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="wepay-menu-item-group">
+                    <div class="wepay-menu-item-group-title">行业解决方案</div>
+                    <ul class="wepay-menu-item-group-list">
+                        <li class="wepay-menu-item" id="nav_profession_park">
+                            <a href="https://wepayui.github.io/profession_park.html">
+                                <span>停车场</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_profession_traffic">
+                            <a href="https://wepayui.github.io/profession_traffic.html">
+                                <span>客运</span>
+                            </a>
+                        </li>
+                        <li class="wepay-menu-item" id="nav_profession_hospital_card">
+                            <a href="https://wepayui.github.io/profession_hospital_card.html">
+                                <span>医院</span>
+                                <span class="chinese">医生名片</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+//获取url的各个部分**$1-$4  协议，域名，端口号，还有最重要的路径path！  13**$5-$7  文件名，锚点(#top)，query参数(?id=55) 
+var urlRegEx = function(url){      
+    //如果加上/g参数，那么只返回$0匹配。也就是说arr.length = 0   
+    var re = /(\w+):\/\/([^\:|\/]+)(\:\d*)?(.*\/)([^#|\?|\n]+)?(#.*)?(\?.*)?/i;   
+    //re.exec(url);   
+    var arr = url.match(re);   
+    return arr;   
+}
+var name = urlRegEx(location.href)[5].split(".")[0];
+var currentMenu = document.getElementById("nav_" + name);
+currentMenu.className = currentMenu.className + " wepay-menu-item-selected"
+</script>
+            <!--[[左侧边栏结束 -->
+            <!--[[右侧页面详情开始 -->
+            <div class="main-container wepay-col-sm-24 wepay-col-md-18 wepay-col-lg-20" id="maincontainer">
+              <!-- [[列表 -->
+<article class="article" id="list">
+	<h1>
+		List
+		<span class="subtitle">列表</span>
+	</h1>
+	<section class="markdown">
+		<p>用于说明或跳转页面。</p>
+		<h2>
+			<span>常用</span>
+		</h2>
+		<div class="wepaylist">
+	        <div class="weui-cells__title">带说明的列表项</div>
+	        <div class="weui-cells">
+	            <div class="weui-cell">
+	                <div class="weui-cell__bd">
+	                    <p>标题文字</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </div>
+	        </div>
+	        <div class="weui-cells__title">带图标、说明的列表项</div>
+	        <div class="weui-cells">
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>标题文字</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </div>
+	            <div class="weui-cell">
+	                <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>标题文字</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </div>
+	        </div>
+	    </div>
+	    <blockquote><a href="javascript:;" class="copy-text" data-stat="1727">复制HTML代码</a></blockquote>
+	    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells__title"</span>&gt;</span>带说明的列表项<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>标题文字<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells__title"</span>&gt;</span>带图标、说明的列表项<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__hd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:20px;margin-right:5px;display:block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>标题文字<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__hd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:20px;margin-right:5px;display:block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>标题文字<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+	    <h2>
+			<span>带跳转</span>
+		</h2>
+		<div class="wepaylist">
+	        <div class="weui-cells__title">带跳转的列表项</div>
+	        <div class="weui-cells">
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">
+	                </div>
+	            </a>
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">
+	                </div>
+	            </a>
+	        </div>
+
+	        <div class="weui-cells__title">带说明、跳转的列表项</div>
+	        <div class="weui-cells">
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </a>
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </a>
+
+	        </div>
+
+	        <div class="weui-cells__title">带图标、说明、跳转的列表项</div>
+	        <div class="weui-cells">
+
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </a>
+	            <a class="weui-cell weui-cell_access" href="javascript:;">
+	                <div class="weui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+	                <div class="weui-cell__bd">
+	                    <p>cell standard</p>
+	                </div>
+	                <div class="weui-cell__ft">说明文字</div>
+	            </a>
+	        </div>
+	    </div>
+	    <blockquote><a href="javascript:;" class="copy-text" data-stat="1728">复制HTML代码</a></blockquote>
+	    <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells__title"</span>&gt;</span>带跳转的列表项<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells__title"</span>&gt;</span>带说明、跳转的列表项<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells__title"</span>&gt;</span>带图标、说明、跳转的列表项<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cells"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__hd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:20px;margin-right:5px;display:block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell weui-cell_access"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"javascript:;"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__hd"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII="</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width:20px;margin-right:5px;display:block"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__bd"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>cell standard<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"weui-cell__ft"</span>&gt;</span>说明文字<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+		<blockquote><a href="javascript:;" class="copy-text" data-stat="1729">复制CSS代码</a></blockquote>
+		<pre><code class="hljs css"><span class="hljs-comment">/*!
+ * WePayUI v0.0.1 (https://github.com/wepayui/wepayui)
+ * Copyright 2016 Tencent, Inc.
+ * Licensed under the MIT license
+ * Component : [weui-cell]
+ */</span>
+<span class="hljs-selector-tag">html</span>{<span class="hljs-attribute">-ms-text-size-adjust</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">-webkit-text-size-adjust</span>:<span class="hljs-number">100%</span>}
+<span class="hljs-selector-tag">body</span>{<span class="hljs-attribute">line-height</span>:<span class="hljs-number">1.6</span>;<span class="hljs-attribute">font-family</span>:-apple-system-font,Helvetica Neue,sans-serif}
+*{<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">img</span>{<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-tag">a</span>{<span class="hljs-attribute">text-decoration</span>:none;<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent}
+<span class="hljs-selector-class">.weui-cells</span>{<span class="hljs-attribute">margin-top</span>:<span class="hljs-number">1.17647059em</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">1.41176471</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">17px</span>;<span class="hljs-attribute">overflow</span>:hidden;<span class="hljs-attribute">position</span>:relative}
+<span class="hljs-selector-class">.weui-cells</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5)}
+<span class="hljs-selector-class">.weui-cells</span><span class="hljs-selector-pseudo">:after</span>,<span class="hljs-selector-class">.weui-cells</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d9d9d9</span>}
+<span class="hljs-selector-class">.weui-cells</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-bottom</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5)}
+<span class="hljs-selector-class">.weui-cells__title</span>{<span class="hljs-attribute">margin-top</span>:.<span class="hljs-number">77em</span>;<span class="hljs-attribute">margin-bottom</span>:.<span class="hljs-number">3em</span>;<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">14px</span>}
+<span class="hljs-selector-class">.weui-cells__title</span>+<span class="hljs-selector-class">.weui-cells</span>{<span class="hljs-attribute">margin-top</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-cells__tips</span>{<span class="hljs-attribute">margin-top</span>:.<span class="hljs-number">3em</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>;<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">14px</span>}
+<span class="hljs-selector-class">.weui-cell</span>{<span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">display</span>:-webkit-box;<span class="hljs-attribute">display</span>:-ms-flexbox;<span class="hljs-attribute">display</span>:flex;<span class="hljs-attribute">-webkit-box-align</span>:center;<span class="hljs-attribute">-ms-flex-align</span>:center;<span class="hljs-attribute">align-items</span>:center}
+<span class="hljs-selector-class">.weui-cell</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">left</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-cell</span><span class="hljs-selector-pseudo">:first-child</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">display</span>:none}
+<span class="hljs-selector-class">.weui-cell_primary</span>{<span class="hljs-attribute">-webkit-box-align</span>:start;<span class="hljs-attribute">-ms-flex-align</span>:start;<span class="hljs-attribute">align-items</span>:flex-start}
+<span class="hljs-selector-class">.weui-cell__bd</span>{<span class="hljs-attribute">-webkit-box-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">-ms-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>}
+<span class="hljs-selector-class">.weui-cell__ft</span>{<span class="hljs-attribute">text-align</span>:right;<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>}
+<span class="hljs-selector-class">.weui-cell_access</span>{<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent;<span class="hljs-attribute">color</span>:inherit}
+<span class="hljs-selector-class">.weui-cell_access</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#ececec</span>}
+<span class="hljs-selector-class">.weui-cell_access</span> <span class="hljs-selector-class">.weui-cell__ft</span>{<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">13px</span>;<span class="hljs-attribute">position</span>:relative}
+<span class="hljs-selector-class">.weui-cell_access</span> <span class="hljs-selector-class">.weui-cell__ft</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">display</span>:inline-block;<span class="hljs-attribute">height</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">border-width</span>:<span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">border-color</span>:<span class="hljs-number">#c8c8cd</span>;<span class="hljs-attribute">border-style</span>:solid;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">top</span>:-<span class="hljs-number">2px</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">4px</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">2px</span>}
+<span class="hljs-selector-class">.weui-cell_link</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#586c94</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">14px</span>}
+<span class="hljs-selector-class">.weui-cell_link</span><span class="hljs-selector-pseudo">:first-child</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">display</span>:block}
+<span class="hljs-selector-class">.weui-check__label</span>{<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent}
+<span class="hljs-selector-class">.weui-check</span>{<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:-<span class="hljs-number">9999em</span>}
+<span class="hljs-selector-class">.weui-cells_radio</span> <span class="hljs-selector-class">.weui-cell__ft</span>{<span class="hljs-attribute">padding-left</span>:.<span class="hljs-number">35em</span>}
+<span class="hljs-selector-class">.weui-cells_radio</span> <span class="hljs-selector-class">.weui-cell</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#ececec</span>}
+<span class="hljs-selector-class">.weui-cells_radio</span> <span class="hljs-selector-class">.weui-check</span><span class="hljs-selector-pseudo">:checked+.weui-icon-checked</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">display</span>:block;<span class="hljs-attribute">content</span>:<span class="hljs-string">'\EA08'</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#09bb07</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">16px</span>}
+<span class="hljs-selector-class">.weui-cells_checkbox</span> <span class="hljs-selector-class">.weui-cell__hd</span>{<span class="hljs-attribute">padding-right</span>:.<span class="hljs-number">35em</span>}
+<span class="hljs-selector-class">.weui-cells_checkbox</span> <span class="hljs-selector-class">.weui-cell</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#ececec</span>}
+<span class="hljs-selector-class">.weui-cells_checkbox</span> <span class="hljs-selector-class">.weui-icon-checked</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">'\EA01'</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#c9c9c9</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">23px</span>;<span class="hljs-attribute">display</span>:block}
+<span class="hljs-selector-class">.weui-cells_checkbox</span> <span class="hljs-selector-class">.weui-check</span><span class="hljs-selector-pseudo">:checked+.weui-icon-checked</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">'\EA06'</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#09bb07</span>}
+<span class="hljs-selector-class">.weui-label</span>{<span class="hljs-attribute">display</span>:block;<span class="hljs-attribute">width</span>:<span class="hljs-number">105px</span>;<span class="hljs-attribute">word-wrap</span>:break-word;<span class="hljs-attribute">word-break</span>:break-all}
+<span class="hljs-selector-class">.weui-input</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">outline</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-appearance</span>:none;<span class="hljs-attribute">background-color</span>:transparent;<span class="hljs-attribute">font-size</span>:inherit;<span class="hljs-attribute">color</span>:inherit;<span class="hljs-attribute">height</span>:<span class="hljs-number">1.41176471em</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">1.41176471</span>}
+<span class="hljs-selector-class">.weui-input</span><span class="hljs-selector-pseudo">::-webkit-inner-spin-button</span>,<span class="hljs-selector-class">.weui-input</span><span class="hljs-selector-pseudo">::-webkit-outer-spin-button</span>{<span class="hljs-attribute">-webkit-appearance</span>:none;<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-textarea</span>{<span class="hljs-attribute">display</span>:block;<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">resize</span>:none;<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">color</span>:inherit;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1em</span>;<span class="hljs-attribute">line-height</span>:inherit;<span class="hljs-attribute">outline</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-textarea-counter</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#b2b2b2</span>;<span class="hljs-attribute">text-align</span>:right}
+<span class="hljs-selector-class">.weui-cell_warn</span> <span class="hljs-selector-class">.weui-textarea-counter</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#e64340</span>}
+<span class="hljs-selector-class">.weui-toptips</span>{<span class="hljs-attribute">display</span>:none;<span class="hljs-attribute">position</span>:fixed;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">translateZ</span>(0);<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">padding</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">14px</span>;<span class="hljs-attribute">text-align</span>:center;<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">3</span>;<span class="hljs-attribute">word-wrap</span>:break-word;<span class="hljs-attribute">word-break</span>:break-all}
+<span class="hljs-selector-class">.weui-toptips_warn</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#e64340</span>}
+<span class="hljs-selector-class">.weui-cells_form</span> <span class="hljs-selector-class">.weui-cell__ft</span>{<span class="hljs-attribute">font-size</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-cells_form</span> <span class="hljs-selector-class">.weui-icon-warn</span>{<span class="hljs-attribute">display</span>:none}
+<span class="hljs-selector-class">.weui-cells_form</span> <span class="hljs-selector-tag">input</span>,<span class="hljs-selector-class">.weui-cells_form</span> <span class="hljs-selector-tag">label</span><span class="hljs-selector-attr">[for]</span>,<span class="hljs-selector-class">.weui-cells_form</span> <span class="hljs-selector-tag">textarea</span>{<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent}
+<span class="hljs-selector-class">.weui-cell_warn</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#e64340</span>}
+<span class="hljs-selector-class">.weui-cell_warn</span> <span class="hljs-selector-class">.weui-icon-warn</span>{<span class="hljs-attribute">display</span>:inline-block}
+<span class="hljs-selector-class">.weui-form-preview</span>{<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#fff</span>}
+<span class="hljs-selector-class">.weui-form-preview</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5)}
+<span class="hljs-selector-class">.weui-form-preview</span><span class="hljs-selector-pseudo">:after</span>,<span class="hljs-selector-class">.weui-form-preview</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d9d9d9</span>}
+<span class="hljs-selector-class">.weui-form-preview</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-bottom</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5)}
+<span class="hljs-selector-class">.weui-form-preview__hd</span>{<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<span class="hljs-attribute">text-align</span>:right;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">2.5em</span>}
+<span class="hljs-selector-class">.weui-form-preview__hd</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">border-bottom</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">100%</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">left</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-form-preview__hd</span> <span class="hljs-selector-class">.weui-form-preview__value</span>{<span class="hljs-attribute">font-style</span>:normal;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">1.6em</span>}
+<span class="hljs-selector-class">.weui-form-preview__bd</span>{<span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;<span class="hljs-attribute">font-size</span>:.<span class="hljs-number">9em</span>;<span class="hljs-attribute">text-align</span>:right;<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">2</span>}
+<span class="hljs-selector-class">.weui-form-preview__ft</span>{<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">50px</span>;<span class="hljs-attribute">display</span>:-webkit-box;<span class="hljs-attribute">display</span>:-ms-flexbox;<span class="hljs-attribute">display</span>:flex}
+<span class="hljs-selector-class">.weui-form-preview__ft</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">border-top</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d5d5d6</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d5d5d6</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleY</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleY</span>(.5)}
+<span class="hljs-selector-class">.weui-form-preview__item</span>{<span class="hljs-attribute">overflow</span>:hidden}
+<span class="hljs-selector-class">.weui-form-preview__label</span>{<span class="hljs-attribute">float</span>:left;<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">1em</span>;<span class="hljs-attribute">min-width</span>:<span class="hljs-number">4em</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>;<span class="hljs-attribute">text-align</span>:justify;<span class="hljs-attribute">-moz-text-align-last</span>:justify;<span class="hljs-attribute">text-align-last</span>:justify}
+<span class="hljs-selector-class">.weui-form-preview__value</span>{<span class="hljs-attribute">display</span>:block;<span class="hljs-attribute">overflow</span>:hidden;<span class="hljs-attribute">word-break</span>:normal;<span class="hljs-attribute">word-wrap</span>:break-word}
+<span class="hljs-selector-class">.weui-form-preview__btn</span>{<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">display</span>:block;<span class="hljs-attribute">-webkit-box-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">-ms-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#3cc51f</span>;<span class="hljs-attribute">text-align</span>:center;<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent}
+<span class="hljs-selector-tag">button</span><span class="hljs-selector-class">.weui-form-preview__btn</span>{<span class="hljs-attribute">background-color</span>:transparent;<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">outline</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">font-size</span>:inherit}
+<span class="hljs-selector-class">.weui-form-preview__btn</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#eee</span>}
+<span class="hljs-selector-class">.weui-form-preview__btn</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-left</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d5d5d6</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d5d5d6</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleX</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleX</span>(.5)}
+<span class="hljs-selector-class">.weui-form-preview__btn</span><span class="hljs-selector-pseudo">:first-child</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">display</span>:none}
+<span class="hljs-selector-class">.weui-form-preview__btn_default</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#999</span>}
+<span class="hljs-selector-class">.weui-form-preview__btn_primary</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#0bb20c</span>}
+<span class="hljs-selector-class">.weui-cell_select</span>{<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-cell_select</span> <span class="hljs-selector-class">.weui-select</span>{<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">30px</span>}
+<span class="hljs-selector-class">.weui-cell_select</span> <span class="hljs-selector-class">.weui-cell__bd</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">display</span>:inline-block;<span class="hljs-attribute">height</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">border-width</span>:<span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">border-color</span>:<span class="hljs-number">#c8c8cd</span>;<span class="hljs-attribute">border-style</span>:solid;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">top</span>:-<span class="hljs-number">2px</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">3px</span>}
+<span class="hljs-selector-class">.weui-select</span>{<span class="hljs-attribute">-webkit-appearance</span>:none;<span class="hljs-attribute">border</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">outline</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">background-color</span>:transparent;<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">font-size</span>:inherit;<span class="hljs-attribute">height</span>:<span class="hljs-number">44px</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">44px</span>;<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-cell_select-before</span>{<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-select</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">105px</span>;<span class="hljs-attribute">box-sizing</span>:border-box}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-cell__hd</span>{<span class="hljs-attribute">position</span>:relative}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-cell__hd</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">1px</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-right</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#d9d9d9</span>;<span class="hljs-attribute">-webkit-transform-origin</span>:<span class="hljs-number">100%</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">transform-origin</span>:<span class="hljs-number">100%</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scaleX</span>(.5);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scaleX</span>(.5)}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-cell__hd</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">display</span>:inline-block;<span class="hljs-attribute">height</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">border-width</span>:<span class="hljs-number">2px</span> <span class="hljs-number">2px</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>;<span class="hljs-attribute">border-color</span>:<span class="hljs-number">#c8c8cd</span>;<span class="hljs-attribute">border-style</span>:solid;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">matrix</span>(.71,.71,-.71,.71,0,0);<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">top</span>:-<span class="hljs-number">2px</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">15px</span>;<span class="hljs-attribute">margin-top</span>:-<span class="hljs-number">3px</span>}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-cell__bd</span>{<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-cell_select-before</span> <span class="hljs-selector-class">.weui-cell__bd</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">display</span>:none}
+<span class="hljs-selector-class">.weui-cell_select-after</span>{<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-cell_select-after</span> <span class="hljs-selector-class">.weui-select</span>{<span class="hljs-attribute">padding-left</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-cell_vcode</span>{<span class="hljs-attribute">padding-top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">padding-right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">0</span>}
+<span class="hljs-selector-class">.weui-vcode-btn</span>,<span class="hljs-selector-class">.weui-vcode-img</span>{<span class="hljs-attribute">margin-left</span>:<span class="hljs-number">5px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">44px</span>;<span class="hljs-attribute">vertical-align</span>:middle}
+<span class="hljs-selector-class">.weui-vcode-btn</span>{<span class="hljs-attribute">display</span>:inline-block;<span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span> .<span class="hljs-number">6em</span> <span class="hljs-number">0</span> .<span class="hljs-number">7em</span>;<span class="hljs-attribute">border-left</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#e5e5e5</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">44px</span>;<span class="hljs-attribute">font-size</span>:<span class="hljs-number">17px</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#3cc51f</span>}
+<span class="hljs-selector-class">.weui-vcode-btn</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#52a341</span>}
+<span class="hljs-selector-class">.weui-gallery</span>{<span class="hljs-attribute">display</span>:none;<span class="hljs-attribute">position</span>:fixed;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#000</span>;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">2</span>}
+<span class="hljs-selector-class">.weui-gallery__img</span>{<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">60px</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">background</span>:<span class="hljs-number">50%</span> no-repeat;<span class="hljs-attribute">background-size</span>:contain}
+<span class="hljs-selector-class">.weui-gallery__opr</span>{<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#0d0d0d</span>;<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-attribute">line-height</span>:<span class="hljs-number">60px</span>;<span class="hljs-attribute">text-align</span>:center}
+<span class="hljs-selector-class">.weui-gallery__del</span>{<span class="hljs-attribute">display</span>:block}
+<span class="hljs-selector-class">.weui-cell_switch</span>{<span class="hljs-attribute">padding-top</span>:<span class="hljs-number">6px</span>;<span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">6px</span>}
+<span class="hljs-selector-class">.weui-switch</span>{<span class="hljs-attribute">-webkit-appearance</span>:none;<span class="hljs-attribute">-moz-appearance</span>:none;<span class="hljs-attribute">appearance</span>:none;<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">width</span>:<span class="hljs-number">52px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">32px</span>;<span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#dfdfdf</span>;<span class="hljs-attribute">outline</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">border-radius</span>:<span class="hljs-number">16px</span>;<span class="hljs-attribute">box-sizing</span>:border-box;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#dfdfdf</span>;<span class="hljs-attribute">-webkit-transition</span>:background-color .<span class="hljs-number">1s</span>,border .<span class="hljs-number">1s</span>;<span class="hljs-attribute">transition</span>:background-color .<span class="hljs-number">1s</span>,border .<span class="hljs-number">1s</span>}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">50px</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#fdfdfd</span>;<span class="hljs-attribute">-webkit-transition</span>:-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.45,1,.4,1);<span class="hljs-attribute">transition</span>:-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.45,1,.4,1);<span class="hljs-attribute">transition</span>:transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.45,1,.4,1);<span class="hljs-attribute">transition</span>:transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.45,1,.4,1),-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.45,1,.4,1)}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:after</span>,<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">30px</span>;<span class="hljs-attribute">border-radius</span>:<span class="hljs-number">15px</span>}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">30px</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#fff</span>;<span class="hljs-attribute">box-shadow</span>:<span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">3px</span> <span class="hljs-built_in">rgba</span>(0,0,0,.4);<span class="hljs-attribute">-webkit-transition</span>:-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.4,.4,.25,1.35);<span class="hljs-attribute">transition</span>:-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.4,.4,.25,1.35);<span class="hljs-attribute">transition</span>:transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.4,.4,.25,1.35);<span class="hljs-attribute">transition</span>:transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.4,.4,.25,1.35),-webkit-transform .<span class="hljs-number">35s</span> <span class="hljs-built_in">cubic-bezier</span>(.4,.4,.25,1.35)}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:checked</span>{<span class="hljs-attribute">border-color</span>:<span class="hljs-number">#04be02</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#04be02</span>}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">scale</span>(0);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">scale</span>(0)}
+<span class="hljs-selector-class">.weui-switch</span><span class="hljs-selector-pseudo">:checked</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">translateX</span>(20px);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translateX</span>(20px)}
+<span class="hljs-selector-class">.weui-uploader__hd</span>{<span class="hljs-attribute">display</span>:-webkit-box;<span class="hljs-attribute">display</span>:-ms-flexbox;<span class="hljs-attribute">display</span>:flex;<span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">10px</span>;<span class="hljs-attribute">-webkit-box-align</span>:center;<span class="hljs-attribute">-ms-flex-align</span>:center;<span class="hljs-attribute">align-items</span>:center}
+<span class="hljs-selector-class">.weui-uploader__title</span>{<span class="hljs-attribute">-webkit-box-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">-ms-flex</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">flex</span>:<span class="hljs-number">1</span>}
+<span class="hljs-selector-class">.weui-uploader__info</span>{<span class="hljs-attribute">color</span>:<span class="hljs-number">#b2b2b2</span>}
+<span class="hljs-selector-class">.weui-uploader__bd</span>{<span class="hljs-attribute">margin-bottom</span>:-<span class="hljs-number">4px</span>;<span class="hljs-attribute">margin-right</span>:-<span class="hljs-number">9px</span>;<span class="hljs-attribute">overflow</span>:hidden}
+<span class="hljs-selector-class">.weui-uploader__files</span>{<span class="hljs-attribute">list-style</span>:none}
+<span class="hljs-selector-class">.weui-uploader__file</span>{<span class="hljs-attribute">float</span>:left;<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">9px</span>;<span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">9px</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">79px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">79px</span>;<span class="hljs-attribute">background</span>:no-repeat <span class="hljs-number">50%</span>;<span class="hljs-attribute">background-size</span>:cover}
+<span class="hljs-selector-class">.weui-uploader__file_status</span>{<span class="hljs-attribute">position</span>:relative}
+<span class="hljs-selector-class">.weui-uploader__file_status</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">bottom</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">background-color</span>:<span class="hljs-built_in">rgba</span>(0,0,0,.5)}
+<span class="hljs-selector-class">.weui-uploader__file_status</span> <span class="hljs-selector-class">.weui-uploader__file-content</span>{<span class="hljs-attribute">display</span>:block}
+<span class="hljs-selector-class">.weui-uploader__file-content</span>{<span class="hljs-attribute">display</span>:none;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">translate</span>(-50%,-50%);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translate</span>(-50%,-50%);<span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>}
+<span class="hljs-selector-class">.weui-uploader__file-content</span> <span class="hljs-selector-class">.weui-icon-warn</span>{<span class="hljs-attribute">display</span>:inline-block}
+<span class="hljs-selector-class">.weui-uploader__input-box</span>{<span class="hljs-attribute">float</span>:left;<span class="hljs-attribute">position</span>:relative;<span class="hljs-attribute">margin-right</span>:<span class="hljs-number">9px</span>;<span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">9px</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">77px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">77px</span>;<span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#d9d9d9</span>}
+<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:after</span>,<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">content</span>:<span class="hljs-string">" "</span>;<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">top</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">50%</span>;<span class="hljs-attribute">-webkit-transform</span>:<span class="hljs-built_in">translate</span>(-50%,-50%);<span class="hljs-attribute">transform</span>:<span class="hljs-built_in">translate</span>(-50%,-50%);<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#d9d9d9</span>}
+<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">2px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">39.5px</span>}
+<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:after</span>{<span class="hljs-attribute">width</span>:<span class="hljs-number">39.5px</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">2px</span>}
+<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:active</span>{<span class="hljs-attribute">border-color</span>:<span class="hljs-number">#999</span>}
+<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:active</span><span class="hljs-selector-pseudo">:after</span>,<span class="hljs-selector-class">.weui-uploader__input-box</span><span class="hljs-selector-pseudo">:active</span><span class="hljs-selector-pseudo">:before</span>{<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#999</span>}
+<span class="hljs-selector-class">.weui-uploader__input</span>{<span class="hljs-attribute">position</span>:absolute;<span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;<span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">left</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;<span class="hljs-attribute">opacity</span>:<span class="hljs-number">0</span>;<span class="hljs-attribute">-webkit-tap-highlight-color</span>:transparent}</code></pre>
+	</section>
+</article>
+<!-- 列表]] -->
+            </div>
+            <!--[[右侧页面详情结束 --> 
+        </div>
+    </div>
+    <!-- [[页面底部 开始 -->
+    <footer id="footer" class="footer">
+    <p>
+        ©2016 Tencent Powered by <span class="green">Wechat Pay Official Team</span>
+    </p>
+</footer>
+    <!-- [[页面底部 结束 -->
+</article>
+
+
+
+
+</body></html>

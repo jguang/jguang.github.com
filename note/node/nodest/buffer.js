@@ -8,6 +8,8 @@ var bufferObj = new Buffer([97,97,97]);
 
 var  bufferObjAB = Buffer.alloc(3, 'a');
 
+
+
 //var bufferObj = new Buffer(26);
 //
 //for (var i = 0 ; i < 26 ; i++) {

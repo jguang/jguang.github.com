@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html import</title>
+</head>
+<link rel="import" id="ImportNode"  href="./html-import-link.html">
+<body>
+
+<script>
+var linkNodeDoc =  
+document.querySelector('#ImportNode').import;  
+var h1 = linkNodeDoc.querySelector('h1');  
+document.body.appendChild(h1.cloneNode(true));
+</script>
+</body>
+</html>

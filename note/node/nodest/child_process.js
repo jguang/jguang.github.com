@@ -2,14 +2,14 @@
  * Created by jianguang on 16/4/25.
  */
 
-var os = require('os');
+var pro = require('child_process');
 
 
 function log() {
     console.log.apply(console, arguments);
 }
 
-log(os.hostname());
+// log(os.hostname());
 
 /*
 log(os.arch());

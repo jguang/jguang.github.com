@@ -15,7 +15,7 @@
     <script>
     (function(window, document) {
         // 设计稿尺寸
-        var designSourceWidth = 640;
+        var designSourceWidth = 375;
         (function() {
             var viewportEl = document.querySelector('meta[name="viewport"]'),
                 hotcssEl = document.querySelector('meta[name="hotcss"]'),
@@ -61,12 +61,14 @@
     })(window, document);
     </script>
 </head>
-<body style="font-size:24px;">
+<body style="font-size:24px; background: #000">
+
     <button onclick="alert(window.devicePixelRatio)">devicePixelRatio</button>
     <button onclick="alert(window.innerWidth)">innerWidth</button>
 
+
     <br/><br/><br/>
-    <div style="width:3.2rem;height:1rem;background:#f00;font-size:100%">
+    <div style="width:3.75rem;height:1rem;background:#f00;font-size:100%">
         百度一下 <span style="font-size:24px;">百度一下</span>
     </div>
     <br>
@@ -75,7 +77,7 @@
     </div>
 
     <br>
-    <div style="width:1.6rem;height:0.5rem;background:#f00;font-size:0.12rem">
+    <div style="width:1.875rem;height:0.5rem;background:#f00;font-size:0.12rem">
         百度一下
     </div>
     <br>
@@ -85,11 +87,24 @@
 
     <br>
 
-    <div style="width:1rem; height:1rem; background:#d00">
+    <div style="width:1rem; height:1rem; background:#d00; border: 1px solid #fff">
 
     </div>
 
     <br>
+
+    <div style="width:1rem; height:1rem; background:#d00; border: 0.01rem solid #fff">
+
+    </div>
+    <br>
+    <div style="height: 1px;background: #f00; overflow: hidden;"></div>
+
+    <br>
+
+    <div style="height: 0.005rem;background: #f00; overflow: hidden;"></div>
+
+    <br>
+
     <br>
 
 </body>

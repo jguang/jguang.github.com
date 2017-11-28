@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+</head>
 <html>
 <body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> 
 
 <style type="text/css" media="screen">
 video{
@@ -8,7 +12,7 @@ video{
 }
 </style>
 
-<video width="320" height="640" controls="controls">
+<video id="video" width="320" height="640" controls="controls" loop="" autoplay="" preload="" poster="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"  webkit-playsinline="true" playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5" x5-video-player-fullscreen="true"  preload="auto">
   <source src="http://www.w3school.com.cn/i/movie.ogg" type="video/ogg" />
   <source src="http://www.w3school.com.cn/i/movie.mp4" type="video/mp4" />
 Your browser does not support the video tag.
@@ -19,33 +23,46 @@ var vd = document.getElementsByTagName('video')[0];
 console.log(vd.videoWidth, vd.videoHeight);
 
 vd.addEventListener('loadstart', function(){
-    console.log("====loadstart=====");
+    console.log("当浏览器开始寻找指定的音频/视频时，会发生 loadstart 事件 ====loadstart=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('durationchange', function(){
-    console.log("====durationchange=====");
+    console.log("当指定音频/视频的时长数据发生变化时 时长将由NaN 变为音频/视频的实际时长====durationchange=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('loadedmetadata', function(){
-    console.log("====loadedmetadata=====");
+    console.log("音频/视频的元数据包括：时长、尺寸（仅视频）以及文本轨道 ====loadedmetadata=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('loadeddata', function(){
-    console.log("====loadeddata=====");
+    console.log("当当前帧的数据已加载，但没有足够的数据来播放指定音频/视频的下一帧时，会发生 loadeddata 事件 ====loadeddata=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('progress', function(){
-    console.log("====progress=====");
+    console.log("当浏览器正在下载指定的音频/视频时，会发生 progress 事件 ====progress=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('canplay', function(){
-    console.log("====canplay=====");
+    console.log("当浏览器能够开始播放指定的音频/视频时，发生 canplay 事件 ====canplay=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
 vd.addEventListener('canplaythrough', function(){
-    console.log("====canplaythrough=====");
+    console.log("当浏览器预计能够在不停下来进行缓冲的情况下持续播放指定的音频/视频时，会发生 canplaythrough 事件====canplaythrough=====");
     console.log(vd.videoWidth, vd.videoHeight);
 });
+
+vd.addEventListener('timeupdate', function(){
+    console.log("====timeupdate=====");
+    console.log(vd.videoWidth, vd.videoHeight);
+});
+
+     //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+     //document.getElementById('video').play(); 
+    //必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('video').play(); 
+        document.getElementById('video').play(); 
+    }, false); 
 </script>
 </body>
 </html>

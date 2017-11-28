@@ -10,5 +10,4 @@ rs.push('boop\n');
 rs.push(null);
 
 
-
 rs.pipe(process.stdout);
