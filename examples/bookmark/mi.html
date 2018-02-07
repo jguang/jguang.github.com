@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广告创意监测URL自动生成</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        background: -webkit-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: -o-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: -moz-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: linear-gradient(125deg, #5a76f2, #8c33a9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mlink {
+        text-align: center;
+        color: #fff;
+    }
+
+    .mlink a {
+        display: inline-block;
+        padding: 10px;
+        border: solid 1px #fff;
+        border-radius: 5px;
+        color: #fff;
+        text-decoration: none;
+        cursor: move;
+        background: -webkit-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: -o-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: -moz-linear-gradient(125deg, #5a76f2, #8c33a9);
+        background: linear-gradient(125deg, #5a76f2, #8c33a9);
+    }
+
+    .mlink ul {
+        text-align: left;
+    }
+</style>
+
+<body>
+
+    <div class="mlink">
+        <a href='javascript:void(function(){try{var cIdText=document.querySelector(".account-wrap>li:nth-child(3)").innerHTML;var customerId=cIdText.match(/[\d]+$/)[0];var id=location.hash.match(/\ad\/([\d]+$)/)[1];if(!customerId||!id){alert("出错了");return}var getRequest=function(url,callback){var xhr=new XMLHttpRequest();xhr.open("GET",url,true);xhr.onreadystatechange=function(){if(xhr.readyState==4&&xhr.status==200){callback.call(this,xhr.responseText)}};xhr.send()};var campaignId;var groupId;getRequest("http://e.mi.com/v2/creative/info?customerId="+customerId+"&id="+id+"&_="+(new Date()*1),function(resp){resp=JSON.parse(resp);campaignId=resp.result.campaignId;groupId=resp.result.adGroupInfo.id;console.log(campaignId,groupId,id);if(!campaignId||!groupId){alert("出错了");return}var clickUrl="http://data.game.ksyun.com/api/v1/ad/ad_r/?app_id=3bdc84ea-d069-11e7-a9b1-000c293330f8&"+"k="+campaignId+"&p=__ADID__&g="+id+"&s="+100128991+"&dx=__IPDX__&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&tr=__REQUESTID__&mo=__OS__&m0=__OPENUDID__&m0a=__DUID__&m1=__ANDROIDID1__&m1a=__ANDROIDID__&m2=__IMEI__&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&vo=3&vr=2&o=";var showUrl="http://data.game.ksyun.com/api/v1/ad/ad_x/?app_id=3bdc84ea-d069-11e7-a9b1-000c293330f8&"+"k="+campaignId+"&p=__ADID__&g="+id+"&s="+100128991+"&dx=__IPDX__&rt=2&ns=__IP__&ni=__IESID__&v=__LOC__&xa=__ADPLATFORM__&tr=__REQUESTID__&mo=__OS__&m0=__OPENUDID__&m0a=__DUID__&m1=__ANDROIDID1__&m1a=__ANDROIDID__&m2=__IMEI__&m4=__AAID__&m5=__IDFA__&m6=__MAC1__&m6a=__MAC__&vo=3&vr=2&o=";alert("点击监测地址:"+clickUrl);alert("展示监测地址:"+showUrl);document.querySelector("#product_clickMonitor").value=clickUrl;document.querySelector("#product_displayMonitor").value=showUrl})}catch(e){alert(e)}})();'>
+            广告创意监测自动生成
+        </a>
+        <br>
+        <br>
+        <br>
+        <ul>
+            <li>1. 拖拽上面按钮到书签栏</li>
+            <li>2. 进入创意编辑页面，点击添加的书签即可</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
