@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bug</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: -webkit-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: -o-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: -moz-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: linear-gradient(125deg, #5a76f2, #8c33a9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mlink {
+      text-align: center;
+      color: #fff;
+    }
+
+    .mlink a {
+      display: inline-block;
+      padding: 10px;
+      border: solid 1px #fff;
+      border-radius: 5px;
+      color: #fff;
+      text-decoration: none;
+      cursor: move;
+      background: -webkit-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: -o-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: -moz-linear-gradient(125deg, #5a76f2, #8c33a9);
+      background: linear-gradient(125deg, #5a76f2, #8c33a9);
+    }
+
+    .mlink ul {
+      text-align: left;
+    }
+  </style>
+
+  <body>
+    <div class="mlink">
+      <a
+        href="javascript:(function(){try{document.querySelector('.ocrname .nodata-flex .data-content').style.overflow = 'hidden'}catch(e){alert(e)}})();"
+      >
+        BUG
+      </a>
+      <br />
+      <br />
+      <br />
+      <ul>
+        <li>1. 拖拽上面按钮到书签栏</li>
+        <li>2. 进入工作台，点击添加的书签即可</li>
+      </ul>
+    </div>
+  </body>
+</html>
