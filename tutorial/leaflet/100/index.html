@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GridLayer</title>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css"
+    />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+
+    <script>
+      var map = new L.Map('map', {
+        center: [39.92, 116.46],
+        zoom: 10,
+        maxZoom: 200,
+        // CRS: L.CRS.EPSG4326,
+      })
+
+      var tiles = new L.GridLayer()
+      tiles.createTile = function (coords) {
+        console.log(coords)
+        var tile = L.DomUtil.create('canvas', 'leaflet-tile')
+        var ctx = tile.getContext('2d')
+        var size = this.getTileSize()
+        tile.width = size.x
+        tile.height = size.y
+        // 将切片号乘以切片分辨率，默认为256pixel,得到切片左上角的绝对像素坐标
+        var nwPoint = coords.scaleBy(size)
+        // 根据绝对像素坐标，以及缩放层级，反投影得到其经纬度
+        var nw = map.unproject(nwPoint, coords.z)
+        //从该切片左上角开始画，画一个切片大小的无填充矩形
+        // ctx.strokeRect(nwPoint.x, nwPoint.y, size.x, size.y)
+        ctx.fillStyle = 'black'
+        //x,y,z显示
+        ctx.fillText(
+          'x: ' + coords.x + ', y: ' + coords.y + ', zoom: ' + coords.z,
+          10,
+          10
+        )
+        //经纬度坐标
+        ctx.fillText('lat: ' + nw.lat + ', lon: ' + nw.lng, 10, 30)
+        //线的颜色
+        ctx.strokeStyle = 'blue'
+        console.log(nwPoint)
+        ctx.strokeRect(nwPoint.x, nwPoint.y, size.x, size.y)
+        ctx.strokeStyle = 'red'
+        //这是canvans的方法
+        ctx.beginPath()
+        ctx.moveTo(0, 0)
+        ctx.lineTo(size.x - 1, 0)
+        ctx.lineTo(size.x - 1, size.y - 1)
+        ctx.lineTo(0, size.y - 1)
+        ctx.closePath()
+        ctx.stroke()
+        return tile
+      }
+      L.GridLayer.prototype._removeAllTiles = () => {
+        console.log('111111')
+        for (var key in this._tiles) {
+          //this._removeTile(key)
+        }
+      }
+      var ok = L.tileLayer(
+        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+          opacity: 0.5,
+          attribution:
+            'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>',
+        }
+      ).addTo(map)
+      // ok._removeAllTiles = () => {
+      //   console.log('keykeykeykey')
+      //   for (var key in this._tiles) {
+      //     console.log(key)
+      //     //this._removeTile(key)
+      //   }
+      // }
+
+      tiles.addTo(map)
+    </script>
+  </body>
+</html>

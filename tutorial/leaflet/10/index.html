@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script style="display: block;">
+      var map = L.map('map', {
+        preferCanvas: true,
+        attributionControl: false,
+        zoomControl: true,
+        detectRetina: true,
+      }).setView([39.928953, 116.389129], 13)
+      L.tileLayer(
+        'https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=582cbe252f8e999b24645bbdf1d8ebf1',
+        {
+          subdomains: '1234',
+          maxZoom: 100,
+          // detectRetina: true,
+          maxZoom: 30,
+          maxNativeZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }
+      ).addTo(map)
+      var latlngs = [[39.928953, 116.389129]]
+      var latlngs1 = [[39.938953, 116.399129]]
+      var latlngs2 = [[39.948953, 116.409129]]
+      var marker = L.marker(latlngs[0], {
+        draggable: true,
+        autoPan: true,
+      })
+      var marker1 = L.marker(latlngs1[0], {
+        draggable: true,
+        autoPan: true,
+      })
+      var marker2 = L.marker(latlngs2[0], {
+        draggable: true,
+        autoPan: true,
+      })
+      L.featureGroup([marker, marker1, marker2])
+        .bindTooltip('11111111111111111', {
+          sticky: true,
+        })
+        .on('click', function () {
+          alert('Clicked on a member of the group!')
+        })
+        .addTo(map)
+        .openTooltip(latlngs[0])
+    </script>
+  </body>
+</html>

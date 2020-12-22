@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="map.fitBounds(polyline.getBounds());">fitBounds</button>
+    <button onclick="setCenterPonit()">setCenterPonit</button>
+    <div id="map"></div>
+    <script style="display: block;">
+      var map = L.map('map', {
+        preferCanvas: true,
+        attributionControl: false,
+        zoomControl: true,
+        detectRetina: true,
+      }).setView([39.928953, 116.389129], 13)
+      L.tileLayer(
+        'https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=582cbe252f8e999b24645bbdf1d8ebf1',
+        {
+          subdomains: '1234',
+          maxZoom: 100,
+          // detectRetina: true,
+          maxZoom: 30,
+          maxNativeZoom: 18,
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }
+      ).addTo(map)
+      var latlngs = [[39.928953, 116.389129]]
+      var latlngs1 = [[39.938953, 116.399129]]
+      var polyline = L.polyline(latlngs.concat(latlngs1), {
+        color: 'red',
+        weight: 1,
+      }).addTo(map)
+      var rectangle = L.rectangle(latlngs.concat(latlngs1), {
+        color: 'red',
+        dashArray: '10',
+        dashOffset: '0',
+        weight: 1,
+      }).addTo(map)
+      var circle = L.circle(latlngs[0], { radius: 300 }).addTo(map)
+      var marker1 = L.marker(latlngs[0], {
+        draggable: true,
+        autoPan: true,
+      }).addTo(map)
+
+      // rectangle.setLatLngs([
+      //   [39.928953, 116.389129],
+      //   [39.938953, 116.399129],
+      // ]) setLatLngs方法使其矩形变为了多变形
+      var marker = L.marker(polyline.getCenter(), {
+        draggable: true,
+        autoPan: true,
+      }).addTo(map)
+      marker.bindTooltip(marker.getLatLng() + '')
+      marker.on('movestart', (e) => {
+        // latlngs.length > 1 && latlngs.pop() //折线
+        latlngs.push(e.target._latlng)
+        // polyline.setLatLngs(latlngs)
+        // polyline.addLatLng(e.target._latlng) 画线
+        // marker.setTooltipContent(marker.getLatLng() + '')
+      })
+
+      marker.on('move', (e) => {
+        latlngs.pop() //折线
+        latlngs.push(e.target._latlng)
+        polyline.setLatLngs(latlngs)
+        // rectangle.setLatLngs(latlngs)
+        // polyline.addLatLng(e.target._latlng) 画线
+        marker.setTooltipContent(marker.getLatLng() + '')
+      })
+      marker1.on('move', (e) => {
+        circle.setRadius(map.distance(latlngs[0], e.target._latlng))
+      })
+      marker.on('moveend', (e) => {
+        // polyline.setLatLngs(latlngs)
+        latlngs1.push(e.target._latlng)
+        console.log(latlngs1)
+        // rectangle.setLatLngs(latlngs1)
+        // polyline.addLatLng(e.target._latlng) 画线
+        // marker.setTooltipContent(marker.getLatLng() + '')
+      })
+      var setCenterPonit = () => {
+        L.marker(polyline.getCenter()).addTo(map)
+      }
+    </script>
+  </body>
+</html>

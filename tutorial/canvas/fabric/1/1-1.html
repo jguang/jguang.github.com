@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-1</title>
+  <script src="../fabric.js"></script>
+</head>
+<body>
+<div >
+  <canvas id="c" width="600" height="600"></canvas>
+</div>
+<script>
+  // create a wrapper around native canvas element (with id="c")
+var canvas = new fabric.Canvas('c',{
+  backgroundColor: 'rgb(100,100,200)',
+  // selectionColor: 'fff',
+  // selectionLineWidth: 10
+});
+// create a rectangle object
+var rect = new fabric.Rect({
+  left: 100,
+  top: 100,
+  fill: 'red',
+  width: 100,
+  rx: 10,
+  ry:10,
+  height: 100,
+  // # angle: 45,
+  cornerColor:"#000",
+});
+
+// "add" rectangle onto canvas
+// canvas.add(rect);
+
+// rect.set({ left: 20, top: 50 });
+// rect.set('fill', 'red');
+rect.set({ strokeWidth: 5, stroke: 'rgba(100,200,200,0.5)' });
+rect.set('angle', 15);
+var circle = new fabric.Circle({
+  radius: 20, fill: 'green', left: 100, top: 100
+});
+var triangle = new fabric.Triangle({
+  width: 20, height: 30, fill: 'blue', left: 50, top: 50
+});
+
+canvas.add(rect, circle, triangle);
+
+fabric.Image.fromURL('https://www.baidu.com/img/flexible/logo/pc/result@2.png', function(oImg) {
+  canvas.add(oImg);
+});
+canvas.renderAll();
+
+</script>
+</body>
+</html>

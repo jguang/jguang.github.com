@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script style="display: block;">
+      var map = L.map('map', {
+        preferCanvas: true,
+        attributionControl: false,
+        zoomControl: false,
+      }).setView([39.928953, 116.389129], 13)
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map)
+      var test = map.createPane('test')
+      var marker = L.marker([39.928953, 116.389129], {
+        draggable: true,
+        autoPan: true,
+        opacity: 6,
+        autoPanPadding: [150, 150],
+        // interactive: false,
+        // pane: 'test', 添加到自定义pane
+      }).addTo(map)
+      var startL
+      var line = L.polyline([]).addTo(map)
+      var polygon = L.polygon([], { color: 'red' }).addTo(map)
+      var lineLat = []
+      marker.on('dragstart', (e) => {
+        console.log((startL = e.target._latlng))
+        lineLat.push(startL)
+        lineLat.push(startL)
+      })
+      // marker.on('movestart', (e) => {
+      //   console.log(e)
+      // })
+      // marker.on('move', (e) => {
+      //   console.log(e)
+      //   console.log(map.distance(e.latlng, e.oldLatLng))
+      // })
+      var dragP
+      marker.on('drag', (e) => {
+        console.log(e)
+        console.log(map.distance(e.latlng, e.oldLatLng))
+        // line && line.remove()
+        dragP = e.latlng
+        lineLat.pop()
+        lineLat.push(dragP)
+        line.setLatLngs(lineLat)
+        polygon.setLatLngs(lineLat)
+      })
+      marker.on('dragend', (e) => {
+        console.log(e.target._latlng)
+        console.log(map.distance(startL, e.target._latlng))
+        // lineLat.push(e.target._latlng)
+        // line.setLatLngs(lineLat)
+      })
+      // marker.on('moveend', (e) => {
+      //   console.log(e)
+      //   console.log(e.latlng)
+      //   console.log(e.oldLatLng)
+      // })
+    </script>
+  </body>
+</html>

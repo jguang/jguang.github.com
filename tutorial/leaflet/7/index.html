@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="getContent()">getContent</button>
+    <div id="zoom"></div>
+    <div id="map"></div>
+    <script style="display: block;">
+      var map = L.map('map', {
+        preferCanvas: true,
+        attributionControl: false,
+        zoomControl: true,
+        detectRetina: true,
+      }).setView([39.928953, 116.389129], 13)
+      var center = [39.928953, 116.389129]
+      var center1 = [39.918953, 116.389129]
+      var setZoomText = (zoom) => {
+        document.getElementById('zoom').innerText = `zoom:${zoom}`
+      }
+      map.on('zoomlevelschange', (e) => {
+        console.log(e)
+        setZoomText(e.target._zoom)
+      })
+      map.on('zoom', (e) => {
+        console.log(e)
+        setZoomText(e.target._zoom)
+      })
+      map.on('zoomend', (e) => {
+        console.log(e)
+        setZoomText(e.target._zoom)
+      })
+      // L.tileLayer(
+      //   'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+      //   {
+      //     subdomains: '1234',
+      //     maxZoom: 100,
+      //     // detectRetina: true,
+      //     maxZoom: 30,
+      //     maxNativeZoom: 18,
+      //     attribution:
+      //       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      //   }
+      // ).addTo(map)
+      var baseLayers = {
+        高德: L.tileLayer(
+          'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+          {
+            subdomains: '1234',
+            maxZoom: 100,
+            // detectRetina: true,
+            maxZoom: 30,
+            maxNativeZoom: 18,
+          }
+        ).addTo(map),
+        '天地图-1': L.tileLayer(
+          'https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=582cbe252f8e999b24645bbdf1d8ebf1',
+          {
+            subdomains: '1234',
+            maxZoom: 100,
+            // detectRetina: true,
+            maxZoom: 30,
+            maxNativeZoom: 18,
+          }
+        ),
+      }
+      var layercontrol = L.control.layers(baseLayers).addTo(map)
+      // var nexrad = L.tileLayer
+      //   .wms('http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
+      //     layers: 'nexrad-n0r-900913',
+      //     format: 'image/png',
+      //     transparent: true,
+      //     attribution: 'Weather data © 2012 IEM Nexrad',
+      //   })
+      //   .addTo(map)
+
+      // var popup = L.popup()
+      //   .setLatLng(center)
+      //   .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+      //   .bindTooltip('ddddd')
+      //   .openTooltip()
+      // var popup1 = L.popup()
+      //   .setLatLng(center1)
+      //   .setContent('<p>Hello world!<br />This is a nice popup1.</p>')
+      // // .openOn(map)
+      // // map.openPopup(popup1)
+      // map.addLayer(popup)
+      L.marker(center)
+        .addTo(map)
+        .bindTooltip(
+          'my tooltip textmy tooltip <br/>textmy tooltip textmy tooltip text',
+          {
+            direction: 'top',
+            // permanent: true,
+            sticky: true,
+          }
+        )
+      //.openTooltip()
+      // getContent = () => {
+      //   console.log(popup1.getContent(), popup1.getElement())
+      // }
+    </script>
+  </body>
+</html>
